@@ -50,7 +50,8 @@ HTML
  
 ### Contributors
 
-- Name <br> [GitHub](github link) [LinkedIn](LinkedI link)
-- Ian O'Connor <br> [GitHub](https://github.com/IanOC1994) [LinkedIn](https://www.linkedin.com/in/ianoconnor1994/)
-- Sarah Darlington <br> [GitHub](https://github.com/Sazzzel) [LinkedIn](https://www.linkedin.com/in/sarah-darlington-dev/)
+- Name <br> [GitHub](github link) / [LinkedIn](LinkedI link)
+- Ian O'Connor <br> [GitHub](https://github.com/IanOC1994) / [LinkedIn](https://www.linkedin.com/in/ianoconnor1994/)
+- Sarah Darlington <br> [GitHub](https://github.com/Sazzzel) / [LinkedIn](https://www.linkedin.com/in/sarah-darlington-dev/)
+- Mikael Johnsson <br> [GitHub](https://github.com/mikael-johnsson) / [LinkedIn](https://www.linkedin.com/in/mikael-johnsson/)
 ---
