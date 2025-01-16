@@ -43,6 +43,7 @@ The **Goal** section provides a concise summary of the main objective or purpose
 ---
 
 ## **💻 Tech Stack**  
+HTML
 
 
 ## **🌟 Credits** 
