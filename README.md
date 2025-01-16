@@ -49,6 +49,7 @@ The **Goal** section provides a concise summary of the main objective or purpose
  
 ### Contributors
 
-- Name <br> [GitHub](github link)
+- Name <br> [GitHub](github link) [LinkedIn](LinkedI link)
+- Sarah Darlington <br> [GitHub](https://github.com/Sazzzel) [LinkedIn](https://www.linkedin.com/in/sarah-darlington-dev/)
 
 ---
