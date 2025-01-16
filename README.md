@@ -50,8 +50,11 @@ HTML
  
 ### Contributors
 
-- Name <br> [GitHub](github link) / [LinkedIn](LinkedI link)
-- Ian O'Connor <br> [GitHub](https://github.com/IanOC1994) / [LinkedIn](https://www.linkedin.com/in/ianoconnor1994/)
-- Sarah Darlington <br> [GitHub](https://github.com/Sazzzel) / [LinkedIn](https://www.linkedin.com/in/sarah-darlington-dev/)
-- Mikael Johnsson <br> [GitHub](https://github.com/mikael-johnsson) / [LinkedIn](https://www.linkedin.com/in/mikael-johnsson/)
----
+| Name | Github | LinkedIn |
+| --- | --- | --- |
+| Ian O'Connor | [Github](hhttps://github.com/IanOC1994) | [LinkedIn](https://www.linkedin.com/in/ianoconnor1994/) |
+| Sarah Darlington | [Github](https://github.com/Sazzzel) | [LinkedIn](https://www.linkedin.com/in/sarah-darlington-dev/) |
+| Mikael Johnsson | [Github](https://github.com/mikael-johnsson) | [LinkedIn](https://www.linkedin.com/in/mikael-johnsson/) |
+| Maarten Ridder | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
+| Gareth | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
+| Amit| [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
