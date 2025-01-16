@@ -50,5 +50,6 @@ The **Goal** section provides a concise summary of the main objective or purpose
 ### Contributors
 
 - Name <br> [GitHub](github link)
+- Ian O'Connor <br> [GitHub](https://github.com/IanOC1994) [LinkedIn](https://www.linkedin.com/in/ianoconnor1994/)
 
 ---
