@@ -15,8 +15,8 @@ const databaseURLTest = "https://haven-v1-fafcc90518dc.herokuapp.com/api/test"; 
 const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to the database
 
 /**
- * When clicking Continue/Submit button, the form will move to the next page
- * or submit the form.
+ * When clicking Continue/Submit button, the form inputs are saved
+ * and the page is changed or the form is submitted
  */
 modalButton.addEventListener('click', function(event){
     event.preventDefault();
