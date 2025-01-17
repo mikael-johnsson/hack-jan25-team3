@@ -20,5 +20,4 @@ submitButton.addEventListener('click', function(event){
         visiblePages[0].classList.add('d-none');
         nextPage.classList.remove('d-none');
     }
-    
 });
