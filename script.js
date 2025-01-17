@@ -68,7 +68,7 @@ function saveFormInputs(){
 async function submitForm(){
     try {
         const formData = new FormData();
-        formData.append('location', incidentDescription); //"location" is just a placeholder
+        formData.append('incident_description', incidentDescription);
         // uploadedMedia.forEach((file) => formData.append('media', file));
         const response = await fetch(`${databaseURL}/report`, {
             method: 'POST',
