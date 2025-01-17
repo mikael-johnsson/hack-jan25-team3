@@ -1,5 +1,10 @@
 /* General styles */
 
+html, body {
+    margin: 0px;
+    height: 100%;
+}
+
 header, footer {
     background-color: #1C191F;
     color: #FEFDF9;
@@ -30,6 +35,21 @@ footer ul {
     flex-direction: row;
     justify-content: center;
     gap: 10px;
+}
+
+/* What3Words Map */
+#map-container {
+    width: 30vw;
+    height: 30vh;
+}
+#search-container {
+    margin: 10px 0 0 10px;
+}
+#search-input {
+    width: 300px;
+}
+#current-location-container {
+    margin: 0 10px 10px 0;
 }
 
 /* Media queries */

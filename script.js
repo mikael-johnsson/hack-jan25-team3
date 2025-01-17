@@ -10,6 +10,9 @@ let incidentDescription= "p-holder";
 // let uploadedMedia = [];
 // let uploadedMediaNames = [];
 
+// What3words API key
+const mapAPIKey = "XLOEYWA8"; // API key for what3words
+
 // Database URLs
 const databaseURLTest = "https://haven-v1-fafcc90518dc.herokuapp.com/api/test"; // URL to the database
 const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to the database
@@ -40,6 +43,7 @@ function changePage(){
     } else {
         if(nextPage.id === "pageThree"){
             modalButton.textContent = "Submit";
+            //should close modal
         }
         visiblePages[0].classList.add('d-none'); //hide current page
         nextPage.classList.remove('d-none'); // display next page
@@ -64,7 +68,7 @@ function saveFormInputs(){
 async function submitForm(){
     try {
         const formData = new FormData();
-        formData.append('description', incidentDescription);
+        formData.append('location', incidentDescription);
         // uploadedMedia.forEach((file) => formData.append('media', file));
         const response = await fetch(`${databaseURL}/report`, {
             method: 'POST',

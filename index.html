@@ -8,6 +8,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     <link rel="manifest" href="assets/images/site.webmanifest">
     <link rel="stylesheet" href="/style.css">
+    <!-- What3Words -->
+    <script type="module" defer src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.esm.js"></script>
+    <script nomodule defer src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.js"></script> 
     <title>Test title</title>
 </head>
 <body>
@@ -34,13 +37,15 @@
                 <div id="pageOne" class="page ">
                     <label for="incidentDescription">Describe what happened</label>
                     <textarea name="incidentDescription" id="incidentDescription" rows="10" cols="40"></textarea>
-                    <label for="mediaUpload">Add img/video</label>
-                    <input type="file" name="mediaUpload" id="mediaUpload" accept="image/*, video/*">
+                    <!-- <label for="mediaUpload">Add img/video</label>
+                    <input type="file" name="mediaUpload" id="mediaUpload" accept="image/*, video/*"> -->
                 </div>
-                <div id="pageTwo" class="page d-none">Page 2 / map</div>
+                <div id="pageTwo" class="page d-none">
+                    <p>Page 2 / map</p>
+                </div>
                 <div id="pageThree" class="page d-none">
-                    <p id="confirmDescription">placeholder p</p>
-                    <p id="confirmMedia">placeholder p for img</p>
+                    <p id="confirmDescription">confirmation placeholder p</p>
+                    <p id="confirmMedia">confirmation placeholder p for img</p>
                 </div>
               </form>
             </div>
@@ -52,10 +57,10 @@
         </div>
       </div>
 
-            <!-- Button to trigger modal -->
+    <!-- Button to trigger modal -->
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#formModal">
     Report incident
-    </button>
+    </button>                       
 
     <!-- Footer -->
     <footer>
