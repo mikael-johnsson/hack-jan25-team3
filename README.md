@@ -151,7 +151,18 @@ The **Goal** section provides a concise summary of the main objective or purpose
 
 ---
 
+## Features
 
+### Safety Button
+Our website includes a floating "To Safety" button designed to protect users in potentially dangerous situations. When clicked, the user is redirected to a different website, and their browsing history is cleared. This ensures that no one can trace their visit to our website.
+
+### Reporting Form
+To assist individuals who have been taken or are being held against their will—or anyone who has encountered someone in need of help—we have provided a report form. This form includes:
+- A description box for detailed information.
+- The option to upload photos or videos as evidence.
+- Integration with the [What3Words API](https://what3words.com/pretty.needed.chill) to allow users to share their location precisely (within a 3m x 3m area).
+
+Users can also indicate whether they are comfortable being contacted for additional information. This feature ensures that users can remain anonymous if they prefer.
 
 
 ## **💻 Tech Stack**  
