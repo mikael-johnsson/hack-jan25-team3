@@ -7,20 +7,98 @@ header, footer {
 
 /* Header */
 header {
-    padding: 20px 0;
+    display: flex;
+    padding: 20px;
     width: 100%;
-    text-align: center;
+    justify-content: space-between;
     position: relative;
     top: 0;
+    margin-bottom: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#menu {
+    letter-spacing: 2px;
+    font-size: 110%;
+    padding-top: 10px;
+}
+
+#menu>li {
+    margin-bottom: .5em;
+    list-style-type: none;
+    text-align: right;
+}
+
+.logo {
+    margin: 0;
+}
+
+/* Navigation & toggles - Mobile first  */
+
+.fa-bars {
+    font-size: xx-large;
+}
+
+nav {
+    position: absolute;
+    background-color: #FEFDF9;
+    color: #1C191F;
+    top: 100%;
+    box-shadow: 0 2px 2px #3a3a3a;
+    width: 60%;
+    list-style-type: none;
+    display: none;
+    margin-left: 36%;
+    padding-right: 10px;
+}
+
+#nav-mobile-toggle:checked~nav {
+    display: block;
+}
+
+#nav-mobile-toggle {
+    display: none;
+    align-items: center;
+}
+
+.nav-mobile-toggle-label {
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.active {
+    border-bottom: 1px solid;
+}
+
+#nav-report-button {
+    font-weight: bold;
+    color: #000000;
+    background-color: rgb(221, 255, 0);
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+
+#nav-safety-button {
+    font-weight: bold;
+    color: #ff0000;
+    background-color: rgb(221, 255, 0);
+    padding: 10px 20px;
+    border-radius: 12px;
 }
 
 /* Footer */
-footer{
+footer {
     padding: 20px 0;
     width: 100%;
     text-align: center;
     position: absolute;
     bottom: 0;
+    justify-content: space-between;
 }
 
 footer ul {
@@ -33,18 +111,56 @@ footer ul {
 }
 
 /* Media queries */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 576px) {
+
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+        display: block;
+        background-color: #1C191F;
+        color: #FEFDF9;
+        position: relative;
+        box-shadow: none;
+        width: 100%;
+        margin: 0;
+        padding: 1px 10px;
+        justify-content: space-between;
+        font-size: 90%;
+    }
+
+    .nav-mobile-toggle {
+        display: block;
+    }
     
+    #menu {
+        display: flex;
+    }
+
+    header li {
+        margin: 0 5px;
+        padding-right: 5px;
+        border-right: 2px solid;
+        border-color: #FEFDF9;
+        align-self: center;
+    }
+
+    #nav-report-button {
+        padding: 5px 5px;
+        font-size: 100%;
+    }
+
+    #nav-safety-button {
+        padding: 5px 5px;
+        font-size: 100%;
+    }
+
 }
 
 @media screen and (max-width: 992px) {
-
+    
 }
 
-@media screen and (max-width: 768px) {
-
-}
-
-@media screen and (max-width: 576px) {
-
+@media screen and (max-width: 1200px) {
+    
 }
