@@ -11,22 +11,28 @@
 
 ## Table of Contents
 
-* [Criteria](#Criteria)
+* [Criteria](#criteria)
 * [UXD (User Experience Design) ](#user-experience-ux)
    * [User Stories](#user-stories)
-[Wireframes](#wireframes)
+   * [Wireframes](#wireframes)
 * [Design](#design)
   * [Colour Scheme](#color-scheme)
   * [Typography](#typography)
-  * [Imagery](#imagery)
-* [Page Features](#page-features)
+* [Features](#features)
   * [Navbar](#navbar)
   * [Hero-Image](#hero-image)
   * [Footer](#footer)  
-* [Tablet & Mobile View](#tablet--mobile-view)
-  * [Desktop, Tablet & Mobile Differences](#desktop-tablet--mobile-differences)
-  * [Tablet View](#tablet-view-ipad-miniipad-prosurface-pro)
-  * [Mobile View](#mobile-view-iphone-5iphone-seiphone-xriphone-12-pro)
+  * [Safety Button](#safety-button)
+  * [Reporting Form](#reporting-form)
+  * [Desktop View](#Desktop-view)
+  * [Tablet View](#tablet-view)
+  * [Mobile View](#mobile-view)
+* [Goal](#goal)
+* [Problem Statement](#problem-statement)
+* [Target Audience](#target-audience)
+* [Benefits](#Benefits)
+* [Submission](#submission)
+* [Deployment](#deployment)
 * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
@@ -195,7 +201,9 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 ### User Story: User Story: Report form
 **Label:** Must Have
 
-**As a user**, I want to be able to report an incident, so that the authorities could be notified.
+> **As a** user, 
+> **I want to** be able to report an incident, 
+> **so that** the authorities could be notified.
 
 ### Acceptance Criteria:
 - A report form is easily accessed from the landing page.
@@ -205,9 +213,9 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 - I have the option to submit my personal information to be able to be contacted by the authorities as a witness.
 
 ### Tasks:
-- Add a modal containing the report.
-- Create functionality to hide/display the form's pages.
-- Create functionality to gather the forms in a backend.
+1. Add a modal containing the report.
+2. Create functionality to hide/display the form's pages.
+3. Create functionality to gather the forms in a backend.
 
 ---
 
@@ -215,10 +223,6 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 **Label:** Setup
 
 ---
-
-
-
-
 [Back to Table of Contents](#table-of-contents)
 
 ---
@@ -251,15 +255,10 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 
 ---
 
-## Features
+# Features
 
 ### **Navbar** 
  
-<details open>
-<summary>Naviagtion bar</summary>  
-
-![Naviagtion bar]()
-</details> 
 
 ### **Hero Image**
 
@@ -278,15 +277,40 @@ To assist individuals who have been taken or are being held against their will�
 
 Users can also indicate whether they are comfortable being contacted for additional information. This feature ensures that users can remain anonymous if they prefer.
 
+### Desktop View
+
+
+### Tablet View
+
+
+### Mobile View
+
+
+
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
-## Future Features
+# **Goal**  
 
+The **Goal** section provides a concise summary of the main objective or purpose of the project described in this README. It addresses the following aspects:  
 
-## **Code to protect: Submission Details**  
+- **Problem Statement:** 
+- **Objective(s):**  
+- **Target Audience:**
+- **Benefits:** 
 
-### **Deployment**  
+[Back to Table of Contents](#table-of-contents)
+
+---
+
+# Submission
+
+[Back to Table of Contents](#table-of-contents)
+
+---
+
+# Deployment
 
 GitHub was used to deploy the website. These were the steps taken to acheive this:
 
@@ -301,47 +325,46 @@ GitHub was used to deploy the website. These were the steps taken to acheive thi
 6. Click Save.
 7. After a few moments, your project will be live, and a link to the live page will appear at the top of the screen.
 
+[Back to Table of Contents](#table-of-contents)
+
 ---
 
+## Future Features
  
-- **The project fits the theme.**  
-- **The project is well planned and executed (Using GitHub Projects/Kanban).**  
-- **The project has a basic README that follows the provided template.** 
-- **The project has an overall sense of completeness.**  
-- **The project showcases a strong sense of creativity and originality.**  
+ [Back to Table of Contents](#table-of-contents)
 
 ---
 
-## **About the Submission**  
+# Technologies Used
 
-### **Introduction**  
+## Languages Used 
 
-### **Design** <br>
-The use of Colour Schemes, Wireframe, Typography, and Imagery made up the design of this project. 
-#### **Colour Scheme** <br>
-#### **Wireframe** <br>
-#### **Typography** <br>
-
----
+## Frameworks, Libraries, Technologies & Programs Used
 
 
-### **Goal**  
-The **Goal** section provides a concise summary of the main objective or purpose of the project described in this README. It addresses the following aspects:  
-
-- **Problem Statement:** 
-- **Objective(s):**  
-- **Target Audience:**
-- **Benefits:** 
+[Back to Table of Contents](#table-of-contents)
 
 ---
 
+# Testing
 
+### HTML Validation
 
-## **💻 Tech Stack**  
-HTML
+### CSS Validation
 
+### JS Validation
+
+### Lighthouse 
+
+[Back to Table of Contents](#table-of-contents)
+
+---
 
 ## **🌟 Credits** 
+
+[Back to Table of Contents](#table-of-contents)
+
+---
  
 ### Contributors
 
@@ -352,3 +375,5 @@ HTML
 | Mikael Johnsson | [Github](https://github.com/mikael-johnsson) | [LinkedIn](https://www.linkedin.com/in/mikael-johnsson/) |
 | Maarten Ridder | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
 | Gareth | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
+
+[Back to Table of Contents](#table-of-contents)
