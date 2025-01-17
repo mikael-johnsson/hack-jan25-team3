@@ -1,6 +1,6 @@
 
 // Modal elements
-const formModal = document.getElementById('formModal'); //Entire Modal
+const formModal = document.getElementById('reportModal'); //Entire Modal
 const modalButton = formModal.querySelector('#submitButton'); // Continue /submit button
 const descriptionInput = document.getElementById('incidentDescription'); // Description input element
 // const mediaUploads = document.getElementById('mediaUpload'); // Media upload input element
