@@ -30,9 +30,14 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form action="">
-                <div id="pageOne" class="page ">Page 1</div>
-                <div id="pageTwo" class="page d-none">Page 2</div>
+              <form action="" method="post" enctype='multipart/form-data' id="reportForm">
+                <div id="pageOne" class="page ">
+                    <label for="incidentDescription">Describe what happened</label>
+                    <textarea name="incidentDescription" id="incidentDescription" rows="10" cols="40"></textarea>
+                    <label for="mediaUpload">Add img/video</label>
+                    <input type="file" name="mediaUpload" id="mediaUpload" accept="image/*, video/*">
+                </div>
+                <div id="pageTwo" class="page d-none">Page 2 / map</div>
                 <div id="pageThree" class="page d-none">Page 3</div>
               </form>
             </div>
@@ -45,8 +50,8 @@
       </div>
 
             <!-- Button to trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
-    Open modal
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#formModal">
+    Report incident
     </button>
 
     <!-- Footer -->

@@ -1,10 +1,17 @@
 
 // Modal
-const formModal = document.getElementById('formModal');
-const pageOne = formModal.querySelector('#pageOne');
-const pageTwo = formModal.querySelector('#pageTwo');
-const submitButton = formModal.querySelector('#submitButton');
+const formModal = document.getElementById('formModal'); //Entire Modal
+const submitButton = formModal.querySelector('#submitButton'); // Continue /submit button
+const descriptionInput = document.getElementById('incidentDescription'); // Description input element
+const mediaUploads = document.getElementById('mediaUpload'); // Media upload input element
+let formDescription= "";
+let uploadedMedia = [];
+let uploadedMediaNames = [];
 
+/**
+ * When clicking Continue/Submit button, the form will move to the next page
+ * or submit the form.
+ */
 submitButton.addEventListener('click', function(event){
     event.preventDefault();
     let pages = Array.from(formModal.querySelectorAll('.page'));
@@ -17,7 +24,12 @@ submitButton.addEventListener('click', function(event){
         if(nextPage.id === "pageThree"){
             submitButton.textContent = "Submit";
         }
-        visiblePages[0].classList.add('d-none');
-        nextPage.classList.remove('d-none');
+
+        formDescription = descriptionInput.value; // Save the description input
+        uploadedMedia = Array.from(mediaUploads.files); // Save the uploaded media
+        uploadedMediaNames = uploadedMedia.map((file) => file.name); // Save the uploaded media names
+        console.log(uploadedMediaNames);
+        visiblePages[0].classList.add('d-none'); //hide current page
+        nextPage.classList.remove('d-none'); // display next page
     }
 });
