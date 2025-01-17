@@ -115,7 +115,109 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 
 ---
 
-### user-stories
+## User Stories
+
+### User Story: API to connect form to database 
+**Label:** Enhancement
+
+---
+
+### User Story: Form for organisations to sign-up as a safe place 
+**Label:** Enhancement
+
+---
+
+### User Story: what3words map for modal 
+**Label:** Should Have
+
+---
+
+### User Story: Readme 
+**Label:** Documentation
+
+---
+
+### User Story: Team overview page
+**Label:** Documentation
+
+---
+
+### User Story: Contact us section 
+**Label:** Should Have
+
+---
+
+### User Story: Page that signposts to other resources for reporting/researching
+**Label:** Should Have
+
+---
+
+### User Story: Create CRUD to append database SH
+**Label:** Should Have
+
+---
+
+### User Story: Create database to link with the reported incidents
+**Label:** Should Have
+
+---
+
+### User Story: Navigation & Footer
+**Label:** Should Have
+
+---
+
+### User Story: Quick exit button
+**Label:** Should Have
+
+---
+
+### User Story: Landing Page
+**Label:** Must Have
+
+---
+
+### User Story: Images / Logos
+**Label:** Should Have
+
+---
+
+### User Story: Decide on content
+**Label:** Must Have
+
+---
+
+### User Story: Create wireframes
+**Label:** Must Have
+
+---
+
+### User Story: User Story: Report form
+**Label:** Must Have
+
+**As a user**, I want to be able to report an incident, so that the authorities could be notified.
+
+### Acceptance Criteria:
+- A report form is easily accessed from the landing page.
+- In the report, I can submit a description of the incident, images or videos, and a place on a map of where the incident occurred.
+- If emergency, I get a notice to contact authorities.
+- For later on filtering, I can add information about the reporter, the victim, and the incident type.
+- I have the option to submit my personal information to be able to be contacted by the authorities as a witness.
+
+### Tasks:
+- Add a modal containing the report.
+- Create functionality to hide/display the form's pages.
+- Create functionality to gather the forms in a backend.
+
+---
+
+### User Story: Favicons and title
+**Label:** Setup
+
+---
+
+
+
 
 [Back to Table of Contents](#table-of-contents)
 
