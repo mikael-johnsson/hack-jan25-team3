@@ -1,4 +1,4 @@
-## <u>HAVEN</u>
+## HAVEN - (Humanitarian Action for Vigilance Empowerment and Notification)
 
 [View live project here]()
 
@@ -9,12 +9,11 @@
 ---
 
 
-## CONTENTS
+## Table of Contents
 
 * [Criteria](#Criteria)
 * [UXD (User Experience Design) ](#user-experience-ux)
-  * [User Stories](#user-stories)
-* [Creation process (Strategy -> Surface)](#creation-process)
+   * [User Stories](#user-stories)
 [Wireframes](#wireframes)
 * [Design](#design)
   * [Colour Scheme](#color-scheme)
@@ -75,6 +74,10 @@ Include engaging and easy-to-understand content to increase user participation a
 Ensure that the project reflects the combined [Contributors](#contributors) of all six team members.
 Contributors should be recognized within the project documentation.
 
+[Back to Table of Contents](#table-of-contents)
+
+---
+
 ## User Experience (UX)  
 
 ### Primary Goal
@@ -108,14 +111,93 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 
 - Returning users who provided contact information may receive follow-ups to assist with ongoing cases and asked if they can provide further informatiom.
 
-# Code to protect
+[Back to Table of Contents](#table-of-contents)
 
 ---
+
+### user-stories
+
+[Back to Table of Contents](#table-of-contents)
+
+---
+
+# Wireframes
+
+<details open>
+<summary>Wireframe - Homepage Mobile & Tablet</summary>  
+
+![homepage wireframe - Mobile & Tablet]()
+</details> 
+
+[Back to Table of Contents](#table-of-contents)
+
+---
+
+# Design
+
+  # Colour Scheme
+
+  [colours]()
+
+  # Typography
+
+[Montserrat](https://fonts.google.com/specimen/Montserrat)
+
+[Lato](https://fonts.google.com/specimen/Lato)
+
+[Back to Table of Contents](#table-of-contents)
+
+---
+
+## Features
+
+### **Navbar** 
+ 
+<details open>
+<summary>Naviagtion bar</summary>  
+
+![Naviagtion bar]()
+</details> 
+
+### **Hero Image**
+
+### **Footer**
+
+
+
+### Safety Button
+Our website includes a floating "To Safety" button designed to protect users in potentially dangerous situations. When clicked, the user is redirected to a different website, and their browsing history is cleared. This ensures that no one can trace their visit to our website.
+
+### Reporting Form
+To assist individuals who have been taken or are being held against their will—or anyone who has encountered someone in need of help—we have provided a report form. This form includes:
+- A description box for detailed information.
+- The option to upload photos or videos as evidence.
+- Integration with the [What3Words API](https://what3words.com/pretty.needed.chill) to allow users to share their location precisely (within a 3m x 3m area).
+
+Users can also indicate whether they are comfortable being contacted for additional information. This feature ensures that users can remain anonymous if they prefer.
+
+
+---
+
+## Future Features
+
+
 ## **Code to protect: Submission Details**  
 
 ### **Deployment**  
 
-The project was deployed on GitHub. The live site can be accessed at:
+GitHub was used to deploy the website. These were the steps taken to acheive this:
+
+
+1. Log in to your GitHub account.
+2. Navigate to the project repository.
+3. Click the Settings tab near the top of the page.
+4. In the left-hand menu, click on Pages.
+5. Under the Source section:
+    - Select main from the drop-down menu labeled "Branch."
+    - Choose root from the folder drop-down menu.
+6. Click Save.
+7. After a few moments, your project will be live, and a link to the live page will appear at the top of the screen.
 
 ---
 
@@ -151,18 +233,6 @@ The **Goal** section provides a concise summary of the main objective or purpose
 
 ---
 
-## Features
-
-### Safety Button
-Our website includes a floating "To Safety" button designed to protect users in potentially dangerous situations. When clicked, the user is redirected to a different website, and their browsing history is cleared. This ensures that no one can trace their visit to our website.
-
-### Reporting Form
-To assist individuals who have been taken or are being held against their will—or anyone who has encountered someone in need of help—we have provided a report form. This form includes:
-- A description box for detailed information.
-- The option to upload photos or videos as evidence.
-- Integration with the [What3Words API](https://what3words.com/pretty.needed.chill) to allow users to share their location precisely (within a 3m x 3m area).
-
-Users can also indicate whether they are comfortable being contacted for additional information. This feature ensures that users can remain anonymous if they prefer.
 
 
 ## **💻 Tech Stack**  
