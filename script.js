@@ -74,11 +74,14 @@ async function submitForm(){
             method: 'POST',
             body: formData
         });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         const data = await response.json();
         console.log("response data: ", data);
     }
     catch(e){
-        console.log("error: ", e)
+        console.log(e)
     }
 }
 
@@ -91,8 +94,12 @@ async function seeReports(){
         const data = await fetch(`${databaseURL}/all-results`, {
             method: 'GET'
         });
+        if (!data.ok) {
+            throw new Error('Network response was not ok');
+        }
         console.log("data: ", data);
+        
     }catch(e){
-        console.log("error: ", e)
+        console.log(e)
     }
 }
