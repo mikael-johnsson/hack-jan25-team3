@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- What3Words -->
+    <script type="module" defer src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.esm.js"></script>
+    <script nomodule defer src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.js"></script> 
     <script src="https://kit.fontawesome.com/685977a0ed.js" crossorigin="anonymous"></script> <!--Fontawesome link-->
 
 </head>
@@ -73,28 +76,40 @@
     <!-- Modal -->
     <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="reportModalLabel">Report Incident</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Report form contents here
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Report incident</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+              <form action="" method="post" enctype='multipart/form-data' id="reportForm">
+                <div id="pageOne" class="page ">
+                    <label for="incidentDescription">Describe what happened</label>
+                    <textarea name="incidentDescription" id="incidentDescription" rows="10" cols="40"></textarea>
+                    <!-- <label for="mediaUpload">Add img/video</label>
+                    <input type="file" name="mediaUpload" id="mediaUpload" accept="image/*, video/*"> -->
+                </div>
+                <div id="pageTwo" class="page d-none">
+                    <p>Page 2 / map</p>
+                </div>
+                <div id="pageThree" class="page d-none">
+                    <p id="confirmDescription">confirmation placeholder p</p>
+                    <p id="confirmMedia">confirmation placeholder p for img</p>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="submitButton">Continue</button>
+            </div>
+          </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Button to trigger modal -->
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#formModal">
+    Report incident
+    </button>                       
 
     <!-- Footer -->
     <footer>
@@ -105,6 +120,11 @@
             <li>Contact Us</li>
         </ul>
     </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 
 </html>
