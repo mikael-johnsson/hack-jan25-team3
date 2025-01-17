@@ -75,9 +75,38 @@ Include engaging and easy-to-understand content to increase user participation a
 Ensure that the project reflects the combined [Contributors](#contributors) of all six team members.
 Contributors should be recognized within the project documentation.
 
+## User Experience (UX)  
+
+### Primary Goal
+
+Our primary goal is to create a safe, accessible, and educational resource that raises awareness about human trafficking, empowers individuals to report incidents, and provides tools to support victims and witnesses in taking action.
+
+- This website serves a dual purpose:
+
+    1. Education: It raises awareness about the prevalence and impact of human trafficking, providing valuable information and resources to inform and engage the public.
+
+    2. Action and Safety: It offers a secure platform for users to report human trafficking cases, ensuring user privacy and safety through features like the "To Safety" button and anonymous reporting options.
 
 
+### **First Time Users**
 
+- New users can access educational resources about human trafficking to raise awareness and learn how they can help.
+
+- New users will find a "To Safety" button that ensures privacy by redirecting them to another site and clearing their browsing history.
+
+- New users can easily use the reporting form to provide information about  people needing help, with options to describe incidents, upload media, and share their precise location using the What3Words API.
+
+- New users have the option to remain anonymous or provide contact details for follow-up communication after sending a  report.
+
+### **Returning Users** 
+
+- Returning users will find the same reliable "To Safety" button.
+
+- Returning users can access educational resources and links to learn about new ways to contribute to the fight against human trafficking.
+
+- Returning users can quickly submit additional reports using the familiar form.
+
+- Returning users who provided contact information may receive follow-ups to assist with ongoing cases and asked if they can provide further informatiom.
 
 # Code to protect
 
@@ -122,6 +151,9 @@ The **Goal** section provides a concise summary of the main objective or purpose
 
 ---
 
+
+
+
 ## **💻 Tech Stack**  
 HTML
 
@@ -132,9 +164,8 @@ HTML
 
 | Name | Github | LinkedIn |
 | --- | --- | --- |
-| Ian O'Connor | [Github](hhttps://github.com/IanOC1994) | [LinkedIn](https://www.linkedin.com/in/ianoconnor1994/) |
+| Ian O'Connor | [Github](https://github.com/IanOC1994) | [LinkedIn](https://www.linkedin.com/in/ianoconnor1994/) |
 | Sarah Darlington | [Github](https://github.com/Sazzzel) | [LinkedIn](https://www.linkedin.com/in/sarah-darlington-dev/) |
 | Mikael Johnsson | [Github](https://github.com/mikael-johnsson) | [LinkedIn](https://www.linkedin.com/in/mikael-johnsson/) |
 | Maarten Ridder | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
 | Gareth | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
-| Amit| [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
