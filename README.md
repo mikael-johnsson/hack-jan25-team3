@@ -123,6 +123,9 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 
 ## User Stories
 
+<details>
+<summary>User Stories</summary>  
+
 ### User Story: API to connect form to database 
 **Label:** Enhancement
 
@@ -223,6 +226,8 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 **Label:** Setup
 
 ---
+</details> 
+
 [Back to Table of Contents](#table-of-contents)
 
 ---
@@ -230,9 +235,9 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 # Wireframes
 
 <details open>
-<summary>Wireframe - Homepage Mobile & Tablet</summary>  
+<summary>Wireframe - Mobile - Front Page & Report </summary>  
 
-![homepage wireframe - Mobile & Tablet]()
+![wireframe - Mobile]()
 </details> 
 
 [Back to Table of Contents](#table-of-contents)
@@ -257,12 +262,12 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 
 # Features
 
-### **Navbar** 
+### Navbar
  
 
-### **Hero Image**
+### Hero Image
 
-### **Footer**
+### Footer
 
 
 
@@ -291,14 +296,48 @@ Users can also indicate whether they are comfortable being contacted for additio
 
 ---
 
-# **Goal**  
+# **Goal**   
 
-The **Goal** section provides a concise summary of the main objective or purpose of the project described in this README. It addresses the following aspects:  
+The primary goal of this project is to create a secure, user-friendly, and educational platform that raises awareness about human trafficking and supports individuals in taking action. The website will achieve this by integrating a reporting system and resources designed to empower users, maintain privacy, and connect them with the appropriate support systems.  
 
-- **Problem Statement:** 
-- **Objective(s):**  
-- **Target Audience:**
-- **Benefits:** 
+### Key Goals:
+1. **Awareness and Education**:  
+   - Provide resources to inform users about human trafficking and its impact.  
+   - Signpost users to additional resources for reporting and researching the issue.  
+
+2. **Reporting and Support**:  
+   - Develop a report form that allows users to describe incidents and pinpoint locations using the What3Words API.  
+   - Offer the option for users to remain anonymous or provide contact details for follow-up by authorities.  
+
+3. **User Safety and Accessibility**:  
+   - Include a quick exit button ("To Safety") to protect user privacy by redirecting them to another site and clearing their browsing history.  
+   - Ensure the site is easy to navigate with clear sections for reporting, educational resources, and organizational information.  
+
+4. **Functionality and Design**:  
+   - Integrate a database to store reported incidents securely, with CRUD functionality to manage data.  
+   - Design wireframes to guide the layout of key pages such as the landing page, navigation, footer, and contact sections.  
+   - Use images, logos, and favicons to enhance the visual appeal and branding of the site.  
+
+## Problem Statement  
+Human trafficking remains a pervasive global issue, affecting millions of people and often operating unnoticed within communities. Many victims lack accessible tools to report their situation or seek help, and witnesses often don't know how to act. Additionally, the lack of awareness surrounding human trafficking leaves many unaware of its severity and prevalence.  
+
+## Objective(s)  
+- To create a secure and user-friendly platform that raises awareness about human trafficking and modern slavery.  
+- To provide a safe space for victims and witnesses to report incidents while maintaining their privacy and anonymity.  
+- To offer educational resources for users to understand and combat human trafficking.  
+- To support authorities and organizations with detailed, actionable data collected through reports.  
+
+## Target Audience  
+- Victims of human trafficking seeking help or a way to report their situation.  
+- Witnesses or concerned individuals looking to report incidents anonymously.  
+- Organizations working to combat human trafficking and provide safe spaces.  
+- General users seeking to educate themselves about human trafficking and its prevention.  
+
+## Benefits  
+- **Empowerment**: Victims and witnesses are provided with tools to take action safely and anonymously.  
+- **Awareness**: Users gain access to valuable resources, increasing public knowledge about human trafficking.  
+- **Safety**: Features like the "To Safety" button prioritize user privacy and security.   
+- **Impactful Reporting**: Reports submitted via the platform include detailed descriptions and geolocation, offering actionable insights for authorities.  
 
 [Back to Table of Contents](#table-of-contents)
 
