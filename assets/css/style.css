@@ -3,6 +3,11 @@ html, body {
     margin: 0;
 }
 
+main { 
+   position: relative;
+    min-height: 100vh;
+}
+
 header, footer {
     background-color: #1C191F;
     color: #FEFDF9;
@@ -16,7 +21,6 @@ header {
     justify-content: space-between;
     position: relative;
     top: 0;
-    margin-bottom: 20px;
 }
 
 header a {
@@ -95,8 +99,35 @@ nav {
     border-radius: 12px;
 }
 
+/* Page headers */
+.page-header {
+    font-weight: bold;
+    font-style: initial;
+    top: 0;
+    padding-top: 20px;
+    width: 80%;
+    text-align: center;
+    margin: 0 10%;
+}
+
+/* Contact page */
+#contact {
+    display: flex;
+    position: relative;
+    width: 90%;
+    max-width: 350px;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: center;
+    border: 2px solid #3a3a3a;
+    border-radius: 25px;
+}
 /* Footer */
 footer {
+    position: absolute;
     padding: 20px 0;
     width: 100%;
     text-align: center;
@@ -111,7 +142,8 @@ footer ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    margin: 0;
 }
 
 
@@ -145,7 +177,10 @@ body {
 
 /* Media queries */
 @media screen and (min-width: 1200px) {
-    
+    nav {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -154,19 +189,18 @@ body {
 
 @media screen and (min-width: 768px) {
 
-    header > nav {
-        margin-left: 0;
-    }
-
     nav {
         display: block;
         background-color: #1C191F;
         color: #FEFDF9;
         position: relative;
         box-shadow: none;
-        font-size: 90%;
+        font-size: 80%;
         padding: 0;
-        margin: 10px 10px 10px 0;
+    }
+
+    nav > ul {
+        margin: 0;
     }
 
     .nav-mobile-toggle {
@@ -180,7 +214,7 @@ body {
     }
 
     .logo {
-
+        margin: 0
     }
 
     header li {
@@ -202,6 +236,16 @@ body {
     #nav-safety-button {
         padding: 5px 5px;
         font-size: 100%;
+    }
+
+    #contact {
+        position: relative;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 20px;
+        justify-content: center;
+        border: 2px solid #3a3a3a;
+        border-radius: 25px;
     }
 
 }

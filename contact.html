@@ -51,7 +51,7 @@
                     <a href="resources.html">Resources</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="active">Contact</a>
                 </li>
                 <li>
                     <a href="#" id="nav-safety-button">To Safety</a>
@@ -61,54 +61,67 @@
     </header>
 
     <main>
-        <div class="container">
-            <!-- hero image & call to action -->
-            <div class="hero-container">
-                <div class="hero-content text-center">
-                    <h1>This is HAVEN</h1>
-
-                    <!-- Button to trigger modal -->
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#reportModal">Report
-                        an Incident</button>
-
-                </div>
-            </div>
-
+        <div class="page header contact-header">
+            <h1 class="h1-page-header">Contact us</h1>
+            <p class="page-context">
+                At H.A.V.E.N, our mission is to combat human trafficking through vigilance,
+                empowerment, and action. We provide a confidential platform for reporting
+                suspected trafficking activities and offer critical resources to help individuals and
+                communities identify warning signs. Together, we are building a future free from exploitation.
+                <br><br>
+                Please get in touch if we can help you in any way.
+            </p>
         </div>
+        <div id="contact">
+            <form method="GET" action="#" id="contact-form"> <!--Need something for this form to be send to-->
+                <h2>Get in Touch</h2>
 
-
-        <!-- Modal -->
-        <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Report incident</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" class="text-input" name="first-name" required>
+                <br>
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" class="text-input" name="last-name" required>
+                <br>
+                <label for="email-address">Email address</label>
+                <input type="text" id="email-address" class="text-input" name="email-address" required>
+                <br>
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" class="text-input" name="phone-number">
+                <br>
+                <br>
+                <p>What is your request about?</p>
+                <br>
+                <div class="radio-buttons">
+                    <div>
+                        <input type="radio" id="report-incident" value="report-incident" class="contact-type"
+                            name="contact-type" required>
+                        <label for="report-incident">Report an incident</label>
                     </div>
-                    <div class="modal-body">
-                        <form action="" method="post" enctype='multipart/form-data' id="reportForm">
-                            <div id="pageOne" class="page ">
-                                <label for="incidentDescription">Describe what happened</label>
-                                <textarea name="incidentDescription" id="incidentDescription" rows="10"
-                                    cols="40"></textarea>
-                                <!-- <label for="mediaUpload">Add img/video</label>
-                        <input type="file" name="mediaUpload" id="mediaUpload" accept="image/*, video/*"> -->
-                            </div>
-                            <div id="pageTwo" class="page d-none">
-                                <p>Page 2 / map</p>
-                            </div>
-                            <div id="pageThree" class="page d-none">
-                                <p id="confirmDescription">confirmation placeholder p</p>
-                                <p id="confirmMedia">confirmation placeholder p for img</p>
-                            </div>
-                        </form>
+                    <div>
+                        <input type="radio" id="information" value="information" class="contact-type"
+                            name="contact-type" required>
+                        <label for="Information">General information</label>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="submitButton">Continue</button>
+                    <div>
+                        <input type="radio" id="collaborate" value="collaborate" class="contact-type"
+                            name="contact-type" required>
+                        <label for="collaborate">Collaborate with HAVEN</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="general" value="general-contact" class="service-type"
+                            name="service-type" required>
+                        <label for="general">General contact</label>
                     </div>
                 </div>
-            </div>
+                <br>
+                <div>
+                    <label for="free-text">Please add your request below</label>
+                    <br>
+                    <textarea name="free-text" id="free-text" rows="4" cols="30"
+                        placeholder="Let us know how we can assist you." required></textarea>
+                </div>
+                <button type="submit" class="get-in-touch-button">Send request</button>
+            </form>
         </div>
 
         <!-- Footer -->
