@@ -31,11 +31,12 @@ modalButton.addEventListener('click', function(event){
     changePage(openPage, pages); // Change the page
 });
 
+
+/**
+ * Checks which page is open in the form modal
+ * @returns the open page and all pages in the form modal
+ */
 function whatPageOpen(){
-    const forms = Array.from(formModal.querySelectorAll('form'));
-    const openForm = forms.filter((form) => !form.classList.contains('d-none'))[0];
-    const closedForm = forms.filter((form) => form.classList.contains('d-none'))[0];
-    
     const pages = Array.from(formModal.querySelectorAll('.page'));
     const openPage = pages.filter((page) => !page.classList.contains('d-none'))[0];
 
@@ -43,9 +44,7 @@ function whatPageOpen(){
         reportForm.classList.add('d-none');
         reporterForm.classList.remove('d-none');
     }
-
     return {openPage, pages};
-
 }
 
 /**
@@ -67,6 +66,9 @@ function changePage(openPage, pages){
         case "pageThree":
             nextPage = allPages.find(page => page.id === "pageFour");
             break;
+        case "pageFour":
+            nextPage = allPages.find(page => page.id === "pageFive");
+            break;
         default:
             console.log("Error: Page not found");
     }
@@ -86,6 +88,10 @@ function changePage(openPage, pages){
         case "pageFour":
             submitReportForm();
             modalButton.setAttribute('disabled', true);
+            break;
+        case "pageFive":
+            console.log("Page Five");
+            modalButton.setAttribute('disable', false);
             break;
         default:
             console.log("Error: Page not found");
@@ -128,6 +134,31 @@ async function submitReportForm(){
     }
 }
 
+async function submitReporterForm(){
+    const formData = new FormData();
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    try{
+        formData.append('first_name', firstName);
+        formData.append('last_name', lastName);
+        formData.append('email', email);
+        formData.append('phone_number', phone);
+        const response = await fetch(`${databaseURL}/reporters`, { // double check the url
+            method: 'POST',
+            body: formData
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log("data: ", data);
+    } catch(e){
+        console.log(e)
+    }
+}
+
 
 /**
  * See all reports from api
@@ -149,7 +180,9 @@ async function seeReports(){
 }
 
 if (yesButton) {
-    yesButton.addEventListener('click', function(){
-        console.log("yes button clicked");
+    yesButton.addEventListener('click', function(e){
+        e.preventDefault();
+        const {openPage, pages} = whatPageOpen();
+        changePage(openPage, pages); // Change the page
     });
 }
