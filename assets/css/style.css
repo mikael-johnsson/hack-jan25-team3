@@ -1,6 +1,8 @@
 /* General styles */
 html, body {
-    margin: 0px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 header, footer {
@@ -93,6 +95,12 @@ nav {
     background-color: rgb(221, 255, 0);
     padding: 10px 20px;
     border-radius: 12px;
+}
+
+/* Map */
+#map {
+    height: 300px;
+    width: 450px;
 }
 
 
