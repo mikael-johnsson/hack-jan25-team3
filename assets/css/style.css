@@ -1,6 +1,8 @@
 /* General styles */
 html, body {
+    height: 100%;
     margin: 0;
+    padding: 0;
 }
 
 header, footer {
@@ -95,6 +97,13 @@ nav {
     border-radius: 12px;
 }
 
+/* Map */
+#map {
+    height: 300px;
+    width: 450px;
+}
+
+
 /* Footer */
 footer {
     padding: 20px 0;
@@ -176,10 +185,6 @@ body {
     #menu {
         display: flex;
         margin: 5px, 0;
-
-    }
-
-    .logo {
 
     }
 
