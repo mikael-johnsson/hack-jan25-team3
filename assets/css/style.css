@@ -1,6 +1,6 @@
 /* General styles */
 html, body {
-    margin: 0;
+    margin: 0px;
 }
 
 header, footer {
@@ -95,6 +95,7 @@ nav {
     border-radius: 12px;
 }
 
+
 /* Footer */
 footer {
     padding: 20px 0;
@@ -176,10 +177,6 @@ body {
     #menu {
         display: flex;
         margin: 5px, 0;
-
-    }
-
-    .logo {
 
     }
 
