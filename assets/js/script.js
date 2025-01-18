@@ -1,6 +1,7 @@
 
 // Modal elements
-const formModal = document.getElementById('reportModal'); //Entire Modal
+const formModal = document.getElementById('reportModal'); //Entire Modal for targeting
+const bootstrapModal = new bootstrap.Modal(formModal); // Bootstrap Modal
 const modalButton = formModal.querySelector('#modalButton'); // Continue /submit button
 const reportForm = formModal.querySelector('#reportForm'); // Report Form element
 const reporterForm = formModal.querySelector('#reporterForm'); // Reporter Form element
@@ -195,5 +196,11 @@ if (yesButton) {
         e.preventDefault();
         const {openPage, pages} = whatPageOpen();
         changePage(openPage, pages); // Change the page
+    });
+}
+if (noButton) {
+    noButton.addEventListener('click', function(e){
+        e.preventDefault();
+        bootstrapModal.hide();
     });
 }
