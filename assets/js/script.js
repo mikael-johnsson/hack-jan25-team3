@@ -91,7 +91,7 @@ function changePage(openPage, pages){
             break;
         case "pageFive":
             console.log("Page Five");
-            modalButton.setAttribute('disable', false);
+            modalButton.removeAttribute('disabled');
             break;
         default:
             console.log("Error: Page not found");
@@ -145,15 +145,16 @@ async function submitReporterForm(){
         formData.append('last_name', lastName);
         formData.append('email', email);
         formData.append('phone_number', phone);
-        const response = await fetch(`${databaseURL}/reporters`, { // double check the url
-            method: 'POST',
-            body: formData
-        });
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
+        // const response = await fetch(`${databaseURL}/reporters`, { // double check the url
+        //     method: 'POST',
+        //     body: formData
+        // });
+        // if (!response.ok) {
+        //     throw new Error('Network response was not ok');
+        // }
+        // const data = await response.json();
         console.log("data: ", data);
+        console.log(formData);
     } catch(e){
         console.log(e)
     }
