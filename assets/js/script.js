@@ -69,6 +69,9 @@ function changePage(openPage, pages){
         case "pageFour":
             nextPage = allPages.find(page => page.id === "pageFive");
             break;
+        case "pageFive":
+            nextPage = allPages.find(page => page.id === "pageSix");
+            break;
         default:
             console.log("Error: Page not found");
     }
@@ -92,6 +95,10 @@ function changePage(openPage, pages){
         case "pageFive":
             console.log("Page Five");
             modalButton.removeAttribute('disabled');
+            break;
+        case "pageSix": // Should be refactored
+            submitReporterForm();
+            modalButton.classList.add('d-none');
             break;
         default:
             console.log("Error: Page not found");
@@ -153,7 +160,7 @@ async function submitReporterForm(){
         //     throw new Error('Network response was not ok');
         // }
         // const data = await response.json();
-        console.log("data: ", data);
+        // console.log("data: ", data);
         console.log(formData);
     } catch(e){
         console.log(e)
