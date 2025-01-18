@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     <link rel="manifest" href="assets/images/site.webmanifest">
+    
     <title>HAVEN</title>
 
     <!-- Bootstrap CSS -->
@@ -29,12 +30,12 @@
     <!-- Header -->
     <header>
         <h1 class="logo">Haven</h1>
-        <div class="burger-container">
             <input type="checkbox" id="nav-mobile-toggle" name="nav-mobile-toggle">
             <label for="nav-mobile-toggle" class="nav-mobile-toggle">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <div class="burger-container">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </div>
             </label>
-        </div>
         <!-- Navbar here -->
         <nav>
             <ul id="menu">
@@ -115,9 +116,9 @@
         <footer>
             <ul>
                 <li>Quick Links</li>
-                <li> The Team</li>
+                <li>The Team</li>
                 <li>Organisations</li>
-                <li>Contact Us</li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </footer>
     </main>
