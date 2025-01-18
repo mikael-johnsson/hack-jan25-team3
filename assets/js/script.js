@@ -204,3 +204,19 @@ if (noButton) {
         bootstrapModal.hide();
     });
 }
+
+// Map
+let what3words,
+  { fetchTransport } = require('@what3words/api');
+
+const apiKey = '<YOUR_API_KEY>';
+const config = {
+  host: 'https://api.what3words.com',
+  apiVersion: 'v3',
+};
+const transport = fetchTransport(); // or you can import 'axiosTransport' instead
+const w3wService = what3words(apiKey, config, { transport });
+
+// you can uncomment the following lines to set your api key and config after instantiation of the w3w service
+// w3wService.setApiKey(apiKey);
+// w3wService.setConfig(config);
