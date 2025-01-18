@@ -37,6 +37,7 @@ header a {
 }
 
 .logo {
+    color: #FEFDF9;
     margin: 0;
 }
 
@@ -153,25 +154,33 @@ body {
 
 @media screen and (min-width: 768px) {
 
+    header > nav {
+        margin-left: 0;
+    }
+
     nav {
         display: block;
         background-color: #1C191F;
         color: #FEFDF9;
         position: relative;
         box-shadow: none;
-        width: 100%;
-        margin: 0;
-        padding: 1px 10px;
-        justify-content: space-between;
         font-size: 90%;
+        padding: 0;
+        margin: 10px 10px 10px 0;
     }
 
     .nav-mobile-toggle {
         display: block;
     }
-    
+
     #menu {
         display: flex;
+        margin: 5px, 0;
+
+    }
+
+    .logo {
+
     }
 
     header li {
@@ -182,6 +191,9 @@ body {
         align-self: center;
     }
 
+    .burger-container {
+        display: none;
+    }
     #nav-report-button {
         padding: 5px 5px;
         font-size: 100%;
