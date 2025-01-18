@@ -27,43 +27,54 @@ const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to
 modalButton.addEventListener('click', function(event){
     event.preventDefault();
     saveReportFormInputs(); // Save the form inputs
-    changePage(); // Change the page
+    const openPage = whatPageOpen();
+    changePage(openPage); // Change the page
 });
 
+function whatPageOpen(){
+    const forms = Array.from(formModal.querySelectorAll('form'));
+    const openForm = forms.filter((form) => !form.classList.contains('d-none'))[0];
+    const closedForm = forms.filter((form) => form.classList.contains('d-none'))[0];
+    
+    const pages = Array.from(openForm.querySelectorAll('.page'));
+    const openPage = pages.filter((page) => !page.classList.contains('d-none'))[0];
+
+    if(openPage.id === "pageThree"){
+        reportForm.classList.add('d-none');
+        reporterForm.classList.remove('d-none');
+        return closedForm.id;
+    } else {
+        return openForm.id;
+    }
+
+}
 
 /**
  * Change the page of the form modal
  * If the current page is the last page, submit the form
  */
-function changePage(){
-    let pages = Array.from(formModal.querySelectorAll('.page'));
+function changePage(formId){
+    let form = formModal.querySelector(`#${formId}`); // Get the current form
+    let pages = Array.from(form.querySelectorAll('.page'));
     let visiblePages = pages.filter((page) => !page.classList.contains('d-none'));
     let nextPage = visiblePages[0].nextElementSibling;
+    
 
     switch(nextPage.id){
         case "pageTwo":
+            visiblePages[0].classList.add('d-none'); //hide current page
+            nextPage.classList.remove('d-none'); // display next page
             break;
         case "pageThree":
+            visiblePages[0].classList.add('d-none'); //hide current page
+            nextPage.classList.remove('d-none'); // display next page
+            modalButton.textContent = "Submit";
             break;
         case "pageFour":
             submitReportForm();
-            console.log("this was the last page, time to submit form");
+            modalButton.setAttribute('disabled', true);
             break;
         default:
-    }
-    
-    if(!nextPage){
-        
-    } else { // make this to a switch statement
-        if(nextPage.id === "pageThree"){
-            modalButton.textContent = "Submit";
-        } else if(nextPage.id === "pageFour"){
-            reportForm.classList.add('d-none');
-            reporterForm.classList.remove('d-none');
-            modalButton.setAttribute('disabled', true);
-        }
-        visiblePages[0].classList.add('d-none'); //hide current page
-        nextPage.classList.remove('d-none'); // display next page
     }
 }
 
