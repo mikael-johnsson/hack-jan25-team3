@@ -11,6 +11,7 @@ const descriptionInput = document.getElementById('incidentDescription'); // Desc
 
 // Form Variables to save data temporarily
 let incidentDescription= "p-holder";
+let reportId;
 // let uploadedMedia = [];
 // let uploadedMediaNames = [];
 
@@ -86,6 +87,8 @@ function changePage(openPage, pages){
         case "pageTwo":
             break;
         case "pageThree":
+            const confirmDescription = document.getElementById('confirmDescription');
+            confirmDescription.textContent = incidentDescription;
             modalButton.textContent = "Submit";
             break;
         case "pageFour":
@@ -93,7 +96,6 @@ function changePage(openPage, pages){
             modalButton.setAttribute('disabled', true);
             break;
         case "pageFive":
-            console.log("Page Five");
             modalButton.removeAttribute('disabled');
             break;
         case "pageSix": // Should be refactored
@@ -152,6 +154,7 @@ async function submitReporterForm(){
         formData.append('last_name', lastName);
         formData.append('email', email);
         formData.append('phone_number', phone);
+        formData.append('report_id', reportId);
         // const response = await fetch(`${databaseURL}/reporters`, { // double check the url
         //     method: 'POST',
         //     body: formData
