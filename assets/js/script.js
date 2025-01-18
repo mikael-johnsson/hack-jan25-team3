@@ -27,8 +27,8 @@ const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to
 modalButton.addEventListener('click', function(event){
     event.preventDefault();
     saveReportFormInputs(); // Save the form inputs
-    const openPage = whatPageOpen();
-    changePage(openPage); // Change the page
+    const {openPage, pages} = whatPageOpen();
+    changePage(openPage, pages); // Change the page
 });
 
 function whatPageOpen(){
@@ -36,16 +36,15 @@ function whatPageOpen(){
     const openForm = forms.filter((form) => !form.classList.contains('d-none'))[0];
     const closedForm = forms.filter((form) => form.classList.contains('d-none'))[0];
     
-    const pages = Array.from(openForm.querySelectorAll('.page'));
+    const pages = Array.from(formModal.querySelectorAll('.page'));
     const openPage = pages.filter((page) => !page.classList.contains('d-none'))[0];
 
-    if(openPage.id === "pageThree"){
+    if (openPage.id == "pageThree") {
         reportForm.classList.add('d-none');
         reporterForm.classList.remove('d-none');
-        return closedForm.id;
-    } else {
-        return openForm.id;
     }
+
+    return {openPage, pages};
 
 }
 
@@ -53,21 +52,35 @@ function whatPageOpen(){
  * Change the page of the form modal
  * If the current page is the last page, submit the form
  */
-function changePage(formId){
-    let form = formModal.querySelector(`#${formId}`); // Get the current form
-    let pages = Array.from(form.querySelectorAll('.page'));
-    let visiblePages = pages.filter((page) => !page.classList.contains('d-none'));
-    let nextPage = visiblePages[0].nextElementSibling;
-    
+function changePage(openPage, pages){
+    let currPage = openPage;
+    let allPages = pages;
+    let nextPage;
 
-    switch(nextPage.id){
+    switch (currPage.id) {
+        case "pageOne":
+            nextPage = allPages.find(page => page.id === "pageTwo");
+            break;
         case "pageTwo":
-            visiblePages[0].classList.add('d-none'); //hide current page
-            nextPage.classList.remove('d-none'); // display next page
+            nextPage = allPages.find(page => page.id === "pageThree");
             break;
         case "pageThree":
-            visiblePages[0].classList.add('d-none'); //hide current page
-            nextPage.classList.remove('d-none'); // display next page
+            nextPage = allPages.find(page => page.id === "pageFour");
+            break;
+        default:
+            console.log("Error: Page not found");
+    }
+
+    // Apply the changes to show the next page
+    if (nextPage) {
+        currPage.classList.add('d-none'); // Hide current page
+        nextPage.classList.remove('d-none'); // Display next page
+    }
+    
+    switch(nextPage.id){
+        case "pageTwo":
+            break;
+        case "pageThree":
             modalButton.textContent = "Submit";
             break;
         case "pageFour":
@@ -75,6 +88,7 @@ function changePage(formId){
             modalButton.setAttribute('disabled', true);
             break;
         default:
+            console.log("Error: Page not found");
     }
 }
 
