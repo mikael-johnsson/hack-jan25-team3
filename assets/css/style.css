@@ -187,12 +187,72 @@ legend {
 /* Article & Context formatting */
 .article-h4 {
     font-weight: bold;
-    padding: 5px 0;
     text-transform: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd; /* Add a subtle underline */
+    padding-bottom: 5px;
 }
 
 .page-context {
     margin: 0 20px;
+}
+
+.resources-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Restrict the width for better readability */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+}
+
+.resources-page-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.h1-page-header {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.resources-content {
+    width: 100%; /* Ensure content spans the main container */
+}
+
+.article {
+    background-color: #fff; /* White background for clarity */
+    border: 1px solid #ddd; /* Subtle border for separation */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space between articles */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Slight shadow for emphasis */
+}
+
+.article-header {
+    margin-bottom: 15px;
+}
+
+.article-content {
+    line-height: 1.6; /* Improve readability */
+    color: #666;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+}
+
+a:hover {
+    color: blue;
 }
 
 /* Contact page */
