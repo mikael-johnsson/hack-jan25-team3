@@ -5,8 +5,9 @@ html, body {
 }
 
 main { 
-    position: relative;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header, footer {
@@ -128,19 +129,23 @@ nav {
 }
 
 /* Contact page */
-#contact { /* need to fix the page break */
+#contact {
     display: flex;
     position: relative;
     width: 90%;
     max-width: 350px;
-    padding-top: 20px;
-    padding-left: 15px;
-    padding-bottom: 20px;
-    margin-top: 20px;
-    margin-bottom: 300px;
+    padding: 20px 15px;
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
     justify-content: center;
     border: 2px solid #3a3a3a;
     border-radius: 25px;
+
+#contact-form {
+        min-width: 200px;
+        max-width: 320px;
+    }
 }
 /* Footer */
 
@@ -151,12 +156,11 @@ nav {
 }
 
 footer {
-    position: absolute;
+    position: relative;
+    margin-top: auto;
     padding: 20px 0;
     width: 100%;
     text-align: center;
-    position: absolute;
-    bottom: 0;
     justify-content: space-between;
 }
 
@@ -272,12 +276,22 @@ body {
 
     #contact {
         position: relative;
-        max-width: 800px;
+        max-width: 600px;
         margin: auto;
         margin-top: 20px;
         justify-content: center;
         border: 2px solid #3a3a3a;
         border-radius: 25px;
+    }
+
+    #contact-form {
+        max-width: 550px;
+    }
+
+    .contact-header {
+        position: relative;
+        max-width: 800px;
+        margin: 20px auto;
     }
 
 }
