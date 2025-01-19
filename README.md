@@ -4,7 +4,7 @@
 
 <br>
 
-![screenshot of Home page]()
+![screenshot of Home page](readmedocs/responsive.png)
 
 ---
 
@@ -362,12 +362,6 @@ Human trafficking remains a pervasive global issue, affecting millions of people
 
 ---
 
-# Submission
-
-[Back to Table of Contents](#table-of-contents)
-
----
-
 # Deployment
 
 GitHub was used to deploy the website. These were the steps taken to acheive this:
@@ -388,6 +382,30 @@ GitHub was used to deploy the website. These were the steps taken to acheive thi
 ---
 
 ## Future Features
+
+## Future Features  
+
+As the platform evolves, we aim to introduce additional features to enhance its functionality and expand its impact.  
+
+### 1. **Safe Place Registration Form**  
+We plan to develop a dedicated form where organizations can register themselves as designated safe spaces for victims of human trafficking. This form will include:  
+- Basic organizational details such as name, address, and contact information.  
+- Descriptions of the services offered (e.g., shelter, legal aid, counseling).  
+- Verification steps to ensure the authenticity and reliability of listed organizations.  
+
+### 2. **Safe Places Directory Page**  
+A dynamic page will be created to display a directory of registered safe places. This page will include:  
+- **Search by Location**: Users will be able to search for safe spaces near them using a location-based filter.  
+- **Map Integration**: A visual map with pins representing the locations of registered organizations.  
+- **Detailed Information**: Each organization listing will include a brief overview, contact details, and available services.  
+- **User Feedback**: Option for users to provide feedback or reviews on listed safe spaces to maintain accountability.  
+
+### 3. **Enhanced User Support**  
+- Integration of location-based services to provide users with real-time suggestions for nearby safe places.  
+- Collaboration tools for organizations to communicate and coordinate with one another directly through the platform.  
+
+These features aim to create a robust support network and ensure that victims have easy access to trusted resources when they need them most.  
+
  
  [Back to Table of Contents](#table-of-contents)
 
@@ -418,13 +436,15 @@ GitHub was used to deploy the website. These were the steps taken to acheive thi
 
 ---
 
-## **🌟 Credits** 
+# **🌟 Credits** 
 
 [Back to Table of Contents](#table-of-contents)
 
 ---
  
-### Contributors
+# Team
+
+## 404 Freedom Not Found
 
 | Name | Github | LinkedIn |
 | --- | --- | --- |
