@@ -4,6 +4,18 @@
 const escapeButton = document.getElementById('nav-safety-button');
     escapeButton.addEventListener('click', (e) => {
         console.log('Escape button clicked!');
-        window.location.replace("https://google.com")
-        history.replaceState(null,'','/news')
+        escapeNow();
 })
+
+document.addEventListener('keydown', (e) => {
+    console.log('Escape keyboard shortcut activated');
+    if (e.ctrlKey && e.event.key === 'e') {
+        e.preventDefault();
+        escapeNow();
+    }
+})
+
+const escapeNow = () => {
+    window.location.replace("https://google.com");
+    history.replaceState(null,'','/news');
+}
