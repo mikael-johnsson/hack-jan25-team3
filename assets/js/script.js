@@ -20,7 +20,8 @@ let reportId;
 const mapAPIKey = "XLOEYWA8"; // API key for what3words
 
 // Database URLs
-const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to the database
+//const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to the database
+const databaseURL = "http://localhost:3000/api"; // URL to the database
 
 /**
  * When clicking Continue/Submit button, the form inputs are saved
@@ -28,7 +29,7 @@ const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to
  */
 modalButton.addEventListener('click', function(event){
     event.preventDefault();
-    saveReportFormInputs(); // Save the form inputs
+    saveReportFormInputs(event); // Save the form inputs
     const {openPage, pages} = whatPageOpen();
     changePage(openPage, pages); // Change the page
 });
@@ -128,6 +129,7 @@ async function submitReportForm(){
     try {
         const formData = new FormData();
         formData.append('description', incidentDescription);
+<<<<<<< HEAD
         formData.append('location', 'placeholder location');
         for (let [key, value] of formData.entries()) { // to see all appended values
             console.log(`report formData: ${key}: ${value}`);
@@ -143,6 +145,21 @@ async function submitReportForm(){
         }
         const data = await response.json();
         reportId = data.results[0].id;
+=======
+        formData.append('location', 'this is a test location');
+        console.log('FormData entries',formData.get('description'));
+        console.log('FormData entries',formData.get('location'));
+        const response = await fetch('http://localhost:3000/api/report', {
+            method: 'POST',
+            body: formData,
+        });
+         if (!response.ok) {
+             throw new Error('Network response was not ok');
+         }
+         const data = await response.json();
+        //save the report id to local storage, to be used in the next page
+         console.log("response data: ", data);
+>>>>>>> d84c032 (feat: create escape button JS and add script tag)
     }
     catch(e){
         console.log(e)
@@ -156,7 +173,13 @@ async function submitReporterForm(){
     const lastName = document.getElementById('lastName').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
+    formData.append('firstName', firstName);
+    formData.append('lastName', lastName);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('reportId', 3);
     try{
+<<<<<<< HEAD
         formData.append('first_name', firstName);
         formData.append('last_name', lastName);
         formData.append('email', email);
@@ -178,6 +201,28 @@ async function submitReporterForm(){
         const data = await response.json();
         console.log("reporter response data: ", data);
         
+=======
+        console.log('FormData:',formData)
+         const response = await fetch(`${databaseURL}/reporter`, { // double check the url
+             method: 'POST',
+             body: JSON.stringify({
+                 firstName,
+                 lastName,
+                 email,
+                 phone,
+                 howCanHelp: 'test how can help',
+                 reportId: 3
+             }),
+             headers: {
+                 'Content-Type': 'application/json'
+             }
+         });
+         if (!response.ok) {
+             throw new Error('Network response was not ok');
+         }
+         const data = await response.json();
+         console.log("data: ", data);
+>>>>>>> d84c032 (feat: create escape button JS and add script tag)
     } catch(e){
         console.log(e)
     }
