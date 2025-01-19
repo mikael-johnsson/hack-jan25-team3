@@ -2,26 +2,21 @@
 // Modal elements
 const formModal = document.getElementById('reportModal'); //Entire Modal for targeting
 const bootstrapModal = new bootstrap.Modal(formModal); // Bootstrap Modal
-const modalButton = formModal.querySelector('#modalButton'); // Continue /submit button
+const modalButton = formModal.querySelector('#modalButton'); // Continue / submit button
 const reportForm = formModal.querySelector('#reportForm'); // Report Form element
 const reporterForm = formModal.querySelector('#reporterForm'); // Reporter Form element
 const noButton = formModal.querySelector('#noBtn'); // No button
 const yesButton = formModal.querySelector('#yesBtn'); // Yes button
 const descriptionInput = document.getElementById('incidentDescription'); // Description input element
-// const mediaUploads = document.getElementById('mediaUpload'); // Media upload input element
+
 
 // Form Variables to save data temporarily
-let incidentDescription= "p-holder";
-let reportId;
-// let uploadedMedia = [];
-// let uploadedMediaNames = [];
+let incidentDescription= "placeholder description";
+let reportId = "placeholder id";
+let incidentLocation = {};
 
-// What3words API key
-const mapAPIKey = "XLOEYWA8"; // API key for what3words
-
-// Database URLs
-//const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to the database
-const databaseURL = "http://localhost:3000/api"; // URL to the database
+// Database URL
+const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api";
 
 /**
  * When clicking Continue/Submit button, the form inputs are saved
@@ -87,11 +82,13 @@ function changePage(openPage, pages){
     
     switch(nextPage.id){
         case "pageTwo":
-            // initMap();
+            initMap();
             break;
         case "pageThree":
             const confirmDescription = document.getElementById('confirmDescription');
             confirmDescription.textContent = incidentDescription;
+            const confirmLocation = document.getElementById('confirmLocation');
+            confirmLocation.textContent = "Latitude: " + incidentLocation.lat + ", Longitude: " + incidentLocation.lng;
             modalButton.textContent = "Submit";
             break;
         case "pageFour":
@@ -101,7 +98,7 @@ function changePage(openPage, pages){
         case "pageFive":
             modalButton.removeAttribute('disabled');
             break;
-        case "pageSix": // Should be refactored
+        case "pageSix":
             submitReporterForm();
             modalButton.classList.add('d-none');
             break;
@@ -117,49 +114,47 @@ function changePage(openPage, pages){
  */
 function saveReportFormInputs(){
     incidentDescription = descriptionInput.value; // Save the description input
-    // uploadedMedia = Array.from(mediaUploads.files); // Save the uploaded media
-    // uploadedMediaNames = uploadedMedia.map((file) => file.name); // Save the uploaded media names
 }
+
+/**
+ * Clear the modal when it is closed and reset open page to pageOne
+ */
+function clearModal(){
+    descriptionInput.value = "";
+    reportId = "";
+    incidentLocation = {};
+    reportForm.classList.remove('d-none');
+    reporterForm.classList.add('d-none');
+    const pages = Array.from(formModal.querySelectorAll('.page'));
+    pages.forEach(page => {
+        page.classList.add('d-none');
+        if(page.id === "pageOne"){ {
+            page.classList.remove('d-none');
+        }
+    }});
+}
+
+// Eventlistener for when the modal is hidden
+formModal.addEventListener('hidden.bs.modal', clearModal); 
 
 
 /**
- * Submit the form to the database
+ * Submit the report form to the database
  */
 async function submitReportForm(){
+    let location = String(incidentLocation.lat) + ", " + String(incidentLocation.lng);
     try {
-        const formData = new FormData();
-        formData.append('description', incidentDescription);
-<<<<<<< HEAD
-        formData.append('location', 'placeholder location');
-        for (let [key, value] of formData.entries()) { // to see all appended values
-            console.log(`report formData: ${key}: ${value}`);
-        }
-        // uploadedMedia.forEach((file) => formData.append('media', file));
-        const response = await fetch(`${databaseURL}/report`, {
+        const response = await fetch(`${databaseURL}/reports`, {
             method: 'POST',
             headers: {"content-type": 'application/json'},
-            body: JSON.stringify({'description': "test", 'location': 'placeholder location'}),
+            body: JSON.stringify({'description': incidentDescription, 'location': location}),
         });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
         reportId = data.results[0].id;
-=======
-        formData.append('location', 'this is a test location');
-        console.log('FormData entries',formData.get('description'));
-        console.log('FormData entries',formData.get('location'));
-        const response = await fetch('http://localhost:3000/api/report', {
-            method: 'POST',
-            body: formData,
-        });
-         if (!response.ok) {
-             throw new Error('Network response was not ok');
-         }
-         const data = await response.json();
-        //save the report id to local storage, to be used in the next page
-         console.log("response data: ", data);
->>>>>>> d84c032 (feat: create escape button JS and add script tag)
+
     }
     catch(e){
         console.log(e)
@@ -167,29 +162,17 @@ async function submitReportForm(){
 }
 
 
+/**
+ * Submit the reporter form to the database
+ */
 async function submitReporterForm(){
-    const formData = new FormData();
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
-    formData.append('firstName', firstName);
-    formData.append('lastName', lastName);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('reportId', 3);
+    // add howCanHelp to the form
     try{
-<<<<<<< HEAD
-        formData.append('first_name', firstName);
-        formData.append('last_name', lastName);
-        formData.append('email', email);
-        formData.append('phone_number', phone);
-        formData.append('report_id', 12);
-        // add how 
-        for (let [key, value] of formData.entries()) { // to see all appended values
-            console.log(`reporter formData: ${key}: ${value}`);
-        }
-        const response = await fetch(`${databaseURL}/reporter`, { // double check the url
+        const response = await fetch(`${databaseURL}/reporters`, { // double check the url
             method: 'POST',
             headers: {"content-type": 'application/json'},
             body: JSON.stringify({'firstName': firstName, 'lastName': lastName, 'email': email, 'phone': phone, howCanHelp: "test", 'reportId': reportId},),
@@ -198,31 +181,7 @@ async function submitReporterForm(){
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        console.log("reporter response data: ", data);
-        
-=======
-        console.log('FormData:',formData)
-         const response = await fetch(`${databaseURL}/reporter`, { // double check the url
-             method: 'POST',
-             body: JSON.stringify({
-                 firstName,
-                 lastName,
-                 email,
-                 phone,
-                 howCanHelp: 'test how can help',
-                 reportId: 3
-             }),
-             headers: {
-                 'Content-Type': 'application/json'
-             }
-         });
-         if (!response.ok) {
-             throw new Error('Network response was not ok');
-         }
-         const data = await response.json();
-         console.log("data: ", data);
->>>>>>> d84c032 (feat: create escape button JS and add script tag)
+        const data = await response.json(); // not needed as of now
     } catch(e){
         console.log(e)
     }
@@ -264,86 +223,88 @@ if (noButton) {
     });
 }
 
-// MAP
-// let map, infoWindow;
-// let markers = [];
 
-// async function initMap() {
+// Initialize and add the map
+let map, infoWindow;
 
-//   // creating a map
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 6,
-//   });
-
-//   // Add a click event listener to the map
-//   map.addListener('click', (event) => {
-//         addMarker(event.latLng);
-//     });
-
-//   infoWindow = new google.maps.InfoWindow();
+async function initMap() {
+    
+    // Dublin
+  const initPosition = { lat: 53.343, lng: -6.283 };
   
-//   const locationButton = document.createElement("button");
-//   locationButton.textContent = "Pan to Current Location";
-//   locationButton.classList.add("custom-map-control-button");
-//   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-//   locationButton.addEventListener("click", () => {
-//     // Try HTML5 geolocation.
-//     if (navigator.geolocation) {
-//       navigator.geolocation.getCurrentPosition(
-//         (position) => {
-//           const pos = {
-//             lat: position.coords.latitude,
-//             lng: position.coords.longitude,
-//           };
+  // Request needed libraries.
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-//           infoWindow.setPosition(pos);
-//           infoWindow.setContent("Location found.");
-//           infoWindow.open(map);
-//           map.setCenter(pos);
-//         },
-//         () => {
-//           handleLocationError(true, infoWindow, map.getCenter());
-//         },
-//       );
-//     } else {
-//       // Browser doesn't support Geolocation
-//       handleLocationError(false, infoWindow, map.getCenter());
-//     }
-//   });
-// }
+  // The map
+  map = new Map(document.getElementById("map"), {
+    zoom: 8,
+    center: initPosition,
+    mapId: "DEMO_MAP_ID",
+  });
 
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//     infoWindow.setPosition(pos);
-//     infoWindow.setContent(
-//         browserHasGeolocation
-//         ? "Error: The Geolocation service failed."
-//         : "Error: Your browser doesn't support geolocation.",
-//     );
-//     infoWindow.open(map);
-// }
 
-// // Function to add a marker at the specified location
-// function addMarker(location) {
-//     // Clear existing markers if you want only one marker at a time
-//     clearMarkers();
 
-//     // Create a new marker
-//     const marker = new google.maps.Marker({
-//         position: location,
-//         map: map,
-//     });
+  // The marker
+  let marker = new AdvancedMarkerElement({
+    map: map,
+    position: initPosition,
+    gmpDraggable: true,
+    title: "Dublin",
+  });
 
-//     // Add the marker to the markers array
-//     markers.push(marker);
-// }
+  if(marker){
+    google.maps.event.clearListeners(marker, 'dragend');
+    console.log("cleared listeners");
+    }
 
-// // Function to clear all markers from the map
-// function clearMarkers() {
-//     for (let i = 0; i < markers.length; i++) {
-//         markers[i].setMap(null);
-//     }
-//     markers = [];
-// }
+  marker.addListener("dragend", (e) => {
+    incidentLocation = { lat: e.latLng.lat(), lng: e.latLng.lng() };
+  })
 
-// window.initMap = initMap;
+
+  // Current location button
+  infoWindow = new google.maps.InfoWindow();
+  const locationButton = document.createElement("button");
+
+  locationButton.textContent = "Pan to Current Location";
+  locationButton.classList.add("custom-map-control-button");
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+  locationButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          incidentLocation = pos;
+          map.setCenter(pos);
+          map.setZoom(16);
+          marker.position = pos;
+        },
+        () => {
+          handleLocationError(true, infoWindow, map.getCenter());
+        },
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  });
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error: The Geolocation service failed."
+        : "Error: Your browser doesn't support geolocation.",
+    );
+    infoWindow.open(map);
+}
+
+window.initMap = initMap;
