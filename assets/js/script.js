@@ -86,7 +86,7 @@ function changePage(openPage, pages){
     
     switch(nextPage.id){
         case "pageTwo":
-            initMap();
+            // initMap();
             break;
         case "pageThree":
             const confirmDescription = document.getElementById('confirmDescription');
@@ -127,23 +127,28 @@ function saveReportFormInputs(){
 async function submitReportForm(){
     try {
         const formData = new FormData();
-        formData.append('incident_description', incidentDescription);
+        formData.append('description', incidentDescription);
+        formData.append('location', 'placeholder location');
+        for (let [key, value] of formData.entries()) { // to see all appended values
+            console.log(`report formData: ${key}: ${value}`);
+        }
         // uploadedMedia.forEach((file) => formData.append('media', file));
         const response = await fetch(`${databaseURL}/report`, {
             method: 'POST',
-            body: formData
+            headers: {"content-type": 'application/json'},
+            body: JSON.stringify({'description': "test", 'location': 'placeholder location'}),
         });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        //save the report id to local storage, to be used in the next page
-        console.log("response data: ", data);
+        reportId = data.results[0].id;
     }
     catch(e){
         console.log(e)
     }
 }
+
 
 async function submitReporterForm(){
     const formData = new FormData();
@@ -156,17 +161,23 @@ async function submitReporterForm(){
         formData.append('last_name', lastName);
         formData.append('email', email);
         formData.append('phone_number', phone);
-        formData.append('report_id', reportId);
-        const response = await fetch(`${databaseURL}/reporters`, { // double check the url
+        formData.append('report_id', 12);
+        // add how 
+        for (let [key, value] of formData.entries()) { // to see all appended values
+            console.log(`reporter formData: ${key}: ${value}`);
+        }
+        const response = await fetch(`${databaseURL}/reporter`, { // double check the url
             method: 'POST',
-            body: formData
+            headers: {"content-type": 'application/json'},
+            body: JSON.stringify({'firstName': firstName, 'lastName': lastName, 'email': email, 'phone': phone, howCanHelp: "test", 'reportId': reportId},),
         });
+        
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log("data: ", data);
-        console.log(formData);
+        console.log("reporter response data: ", data);
+        
     } catch(e){
         console.log(e)
     }
@@ -192,6 +203,8 @@ async function seeReports(){
     }
 }
 
+
+// Event listeners for the Yes and No buttons
 if (yesButton) {
     yesButton.addEventListener('click', function(e){
         e.preventDefault();
@@ -206,61 +219,86 @@ if (noButton) {
     });
 }
 
-// Map
-let map, infoWindow;
+// MAP
+// let map, infoWindow;
+// let markers = [];
 
-async function initMap() {
+// async function initMap() {
+
+//   // creating a map
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: -34.397, lng: 150.644 },
+//     zoom: 6,
+//   });
+
+//   // Add a click event listener to the map
+//   map.addListener('click', (event) => {
+//         addMarker(event.latLng);
+//     });
+
+//   infoWindow = new google.maps.InfoWindow();
   
+//   const locationButton = document.createElement("button");
+//   locationButton.textContent = "Pan to Current Location";
+//   locationButton.classList.add("custom-map-control-button");
+//   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+//   locationButton.addEventListener("click", () => {
+//     // Try HTML5 geolocation.
+//     if (navigator.geolocation) {
+//       navigator.geolocation.getCurrentPosition(
+//         (position) => {
+//           const pos = {
+//             lat: position.coords.latitude,
+//             lng: position.coords.longitude,
+//           };
 
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+//           infoWindow.setPosition(pos);
+//           infoWindow.setContent("Location found.");
+//           infoWindow.open(map);
+//           map.setCenter(pos);
+//         },
+//         () => {
+//           handleLocationError(true, infoWindow, map.getCenter());
+//         },
+//       );
+//     } else {
+//       // Browser doesn't support Geolocation
+//       handleLocationError(false, infoWindow, map.getCenter());
+//     }
+//   });
+// }
 
-  // creating a map
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 6,
-  });
+// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+//     infoWindow.setPosition(pos);
+//     infoWindow.setContent(
+//         browserHasGeolocation
+//         ? "Error: The Geolocation service failed."
+//         : "Error: Your browser doesn't support geolocation.",
+//     );
+//     infoWindow.open(map);
+// }
 
-  infoWindow = new google.maps.InfoWindow();
-  const locationButton = document.createElement("button");
+// // Function to add a marker at the specified location
+// function addMarker(location) {
+//     // Clear existing markers if you want only one marker at a time
+//     clearMarkers();
 
-  locationButton.textContent = "Pan to Current Location";
-  locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-  locationButton.addEventListener("click", () => {
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
+//     // Create a new marker
+//     const marker = new google.maps.Marker({
+//         position: location,
+//         map: map,
+//     });
 
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("Location found.");
-          infoWindow.open(map);
-          map.setCenter(pos);
-        },
-        () => {
-          handleLocationError(true, infoWindow, map.getCenter());
-        },
-      );
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
-  });
-}
+//     // Add the marker to the markers array
+//     markers.push(marker);
+// }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(
-        browserHasGeolocation
-        ? "Error: The Geolocation service failed."
-        : "Error: Your browser doesn't support geolocation.",
-    );
-    infoWindow.open(map);
-}
+// // Function to clear all markers from the map
+// function clearMarkers() {
+//     for (let i = 0; i < markers.length; i++) {
+//         markers[i].setMap(null);
+//     }
+//     markers = [];
+// }
 
-window.initMap = initMap;
+// window.initMap = initMap;
