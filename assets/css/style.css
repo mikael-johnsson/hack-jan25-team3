@@ -109,10 +109,26 @@ nav {
 /* Page 3 report form */
 #confirmDescription {
     margin-bottom: 8px;
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 10px; 
+   
 }
 
 #confirmLocation {
     margin-bottom: 8px;
+}
+
+#pageThree {
+    border: 2px solid #000; 
+    padding: 20px; 
+    border-radius: 8px; 
+    text-align: center; 
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+.bold {
+    font-weight: bold; 
 }
 
 /* Page 5 report form */
