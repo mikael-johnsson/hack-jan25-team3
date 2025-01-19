@@ -3,9 +3,10 @@
 
 const escapeButton = document.getElementById('nav-safety-button');
     escapeButton.addEventListener('click', (e) => {
+        e.preventDefault();
         console.log('Escape button clicked!');
-        escapeNow();
-})
+        escapeNow()
+    })
 
 document.addEventListener('keydown', (e) => {
     console.log('Escape keyboard shortcut activated');
@@ -16,6 +17,6 @@ document.addEventListener('keydown', (e) => {
 })
 
 const escapeNow = () => {
-    window.location.replace("https://google.com");
-    history.replaceState(null,'','/news');
+        window.location.replace("https://www.bbc.co.uk/weather/");
+
 }
