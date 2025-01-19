@@ -15,85 +15,197 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- What3Words -->
+    <script type="module" defer
+        src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.esm.js"></script>
+    <script nomodule defer
+        src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.js"></script>
     <script src="https://kit.fontawesome.com/685977a0ed.js" crossorigin="anonymous"></script> <!--Fontawesome link-->
 
 </head>
 
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <h1 class="logo">Haven</h1>
+
+    <!-- Header -->
+    <header>
+        <h1 class="logo">Haven</h1>
             <input type="checkbox" id="nav-mobile-toggle" name="nav-mobile-toggle">
             <label for="nav-mobile-toggle" class="nav-mobile-toggle">
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </label>
-            <nav>
-                <ul id="menu">
-                    <li>
-                        <a href="index.html" class="active">Home</a>
-                    </li>
-                    <li>
-                        <a href="#" id="nav-report-button">Report</a>
-                    </li>
-                    <li>
-                        <a href="#">Haven</a>
-                    </li>
-                    <li>
-                        <a href="#">Resources</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li>
-                        <a href="#" id="nav-safety-button">To Safety</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
 
-        <main>
+        <!-- Navbar here -->
+        <nav>
+            <ul id="menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-report-button">Report</a>
+                </li>
+                <li>
+                    <a href="haven.html">Haven</a>
+                </li>
+                <li>
+                    <a href="resources.html" class="active">Resources</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-safety-button">To Safety</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-
-        </main>
-    </div>
-    
-
-    <!-- Modal -->
-    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="reportModalLabel">Report Incident</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    <main>
+        <div class="page-header">
+            <h1 class="h1-page-header">resources</h1>
+        </div>
+        <div class="resources-content">
+            <div class="article article-1">
+                <h3 class="article-header">Recognising the Signs of Human Trafficking</h3>
+                <div class="article-content">
+                    XYZ ABC
                 </div>
-                <div class="modal-body">
-                    Report form contents here
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="article article-2">
+                <h3 class="article-header">Valuable Resources on Human Trafficking in Western Europe</h3>
+                <div class="article-content">
+                    If you are concerned about human trafficking or want to take action, many
+                    organisations and resources in Western Europe can provide support, information,
+                    and assistance. Here is a list of key contacts and services:
+                    <br>
+                    <h4 class="article-h4">Organizations and Hotlines</h4>
+                    <ol>
+                        <li>European Union Anti-Trafficking Coordination
+                            <ul>
+                                <li>Website: ec.europa.eu/anti-trafficking</li>
+                                <li>Provides policy guidance, reports, and an overview of anti-trafficking
+                                    efforts across Europe.</li>
+                            </ul>
+                        </li>
+                        <li>La Strada International
+                            <ul>
+                                <li>Website: lastradainternational.org</li>
+                                <li>A network of European NGOs working to combat trafficking and provide victim support.
+                                </li>
+                            </ul>
+                        </li>
+                        <li> Anti-Slavery International
+                            <ul>
+                                <li>Website: antislavery.org</li>
+                                <li>Works to eliminate modern slavery and human trafficking globally.</li>
+                            </ul>
+                        </li>
+                        <li> A21 Campaign
+                            <ul>
+                                <li>Website: a21.org</li>
+                                <li>Has a European presence with resources and advocacy efforts.</li>
+                                <li>Hotline: Varies by country; see website for local contacts.</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <h4 class="article-h4">National Hotlines</h4>
+                        <ul>
+                            <li>Ireland: Blue Blindfold Campaign – 1800 666 111</li>
+                            <li>United Kingdom: Modern Slavery Helpline – 08000 121 700</li>
+                            <li>France: National Human Trafficking Hotline – 0800 200 777</li>
+                            <li>Germany: Advice Centre for Human Trafficking – +49 30 2639 6736</li>
+                            <li>Spain: National Trafficking Helpline – 900 105 090</li>
+                        </ul>
+                        <br>
+                        <h4 class="article-h4">Charities and Support Networks</h4>
+                        <li> Hope for Justice (UK and Europe)
+                            <ul>
+                                <li>Website: hopeforjustice.org</li>
+                                <li>Provides rescue and support services for trafficking victims.</li>
+                            </ul>
+                        </li>
+                        <li> Caritas Internationalis (Europe-wide)
+                            <ul>
+                                <li>Website: caritas.org</li>
+                                <li>Offers social services, legal aid, and reintegration support.</li>
+                            </ul>
+                        </li>
+                        <li> Migrant Help (UK)
+                            <ul>
+                                <li>Website: migranthelpuk.org</li>
+                                <li>Assists migrants and victims of exploitation with safe accommodation and advice.
+                                </li>
+                            </ul>
+                        </li>
+                        <br>
+                        <h4 class="article-h4">Educational Resources</h4>
+                        <ul>
+                            <li>European Crime Prevention Network (EUCPN)
+                                <ul>
+                                    <li>Website: eucpn.org</li>
+                                    <li>Offers reports, campaigns, and research on human trafficking prevention.</li>
+                                </ul>
+                            </li>
+                            <li>UNODC Human Trafficking Portal
+                                <ul>
+                                    <li>Website: unodc.org</li>
+                                    <li>Contains global and European data on trafficking trends and legal frameworks.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br>
+                        <p>By utilising these resources, you can learn more about human trafficking, recognize its
+                            signs, and find avenues to report suspicious activities or support victims. Every action
+                            helps to combat this pervasive crime.</p>
+                        <br>
+                        <h4 class="article-h4">Contact us</h4>
+                        <p>Have questions or need support? Do not hesitate to reach out through our <a
+                                href="contact.html">Contact Us</a> section.
+                            Whether you need help, or are looking for more information, we are here to listen and
+                            provide assistance.</p>
+                    </ol>
                 </div>
             </div>
         </div>
-    </div>
 
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reportModalLabel">Report Incident</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Report form contents here
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <ul>
+                <li>Quick Links</li>
+                <li> The Team</li>
+                <li>Organisations</li>
+                <li>Contact Us</li>
+            </ul>
+        </footer>
+    </main>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <!-- Footer -->
-    <footer>
-        <ul>
-            <li>Quick Links</li>
-            <li> The Team</li>
-            <li>Organisations</li>
-            <li>Contact Us</li>
-        </ul>
-    </footer>
+
 </body>
 
 </html>

@@ -1,12 +1,18 @@
 
 // Modal elements
-const formModal = document.getElementById('reportModal'); //Entire Modal
-const modalButton = formModal.querySelector('#submitButton'); // Continue /submit button
+const formModal = document.getElementById('reportModal'); //Entire Modal for targeting
+const bootstrapModal = new bootstrap.Modal(formModal); // Bootstrap Modal
+const modalButton = formModal.querySelector('#modalButton'); // Continue /submit button
+const reportForm = formModal.querySelector('#reportForm'); // Report Form element
+const reporterForm = formModal.querySelector('#reporterForm'); // Reporter Form element
+const noButton = formModal.querySelector('#noBtn'); // No button
+const yesButton = formModal.querySelector('#yesBtn'); // Yes button
 const descriptionInput = document.getElementById('incidentDescription'); // Description input element
 // const mediaUploads = document.getElementById('mediaUpload'); // Media upload input element
 
 // Form Variables to save data temporarily
 let incidentDescription= "p-holder";
+let reportId;
 // let uploadedMedia = [];
 // let uploadedMediaNames = [];
 
@@ -14,7 +20,6 @@ let incidentDescription= "p-holder";
 const mapAPIKey = "XLOEYWA8"; // API key for what3words
 
 // Database URLs
-const databaseURLTest = "https://haven-v1-fafcc90518dc.herokuapp.com/api/test"; // URL to the database
 const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to the database
 
 /**
@@ -23,30 +28,84 @@ const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to
  */
 modalButton.addEventListener('click', function(event){
     event.preventDefault();
-    saveFormInputs(); // Save the form inputs
-    changePage(); // Change the page
+    saveReportFormInputs(); // Save the form inputs
+    const {openPage, pages} = whatPageOpen();
+    changePage(openPage, pages); // Change the page
 });
 
+
+/**
+ * Checks which page is open in the form modal
+ * @returns the open page and all pages in the form modal
+ */
+function whatPageOpen(){
+    const pages = Array.from(formModal.querySelectorAll('.page'));
+    const openPage = pages.filter((page) => !page.classList.contains('d-none'))[0];
+
+    if (openPage.id == "pageThree") {
+        reportForm.classList.add('d-none');
+        reporterForm.classList.remove('d-none');
+    }
+    return {openPage, pages};
+}
 
 /**
  * Change the page of the form modal
  * If the current page is the last page, submit the form
  */
-function changePage(){
-    let pages = Array.from(formModal.querySelectorAll('.page'));
-    let visiblePages = pages.filter((page) => !page.classList.contains('d-none'));
-    let nextPage = visiblePages[0].nextElementSibling;
+function changePage(openPage, pages){
+    let currPage = openPage;
+    let allPages = pages;
+    let nextPage;
+
+    switch (currPage.id) {
+        case "pageOne":
+            nextPage = allPages.find(page => page.id === "pageTwo");
+            break;
+        case "pageTwo":
+            nextPage = allPages.find(page => page.id === "pageThree");
+            break;
+        case "pageThree":
+            nextPage = allPages.find(page => page.id === "pageFour");
+            break;
+        case "pageFour":
+            nextPage = allPages.find(page => page.id === "pageFive");
+            break;
+        case "pageFive":
+            nextPage = allPages.find(page => page.id === "pageSix");
+            break;
+        default:
+            console.log("Error: Page not found");
+    }
+
+    // Apply the changes to show the next page
+    if (nextPage) {
+        currPage.classList.add('d-none'); // Hide current page
+        nextPage.classList.remove('d-none'); // Display next page
+    }
     
-    if(!nextPage){
-        submitForm();
-        console.log("this was the last page, time to submit form");
-    } else {
-        if(nextPage.id === "pageThree"){
+    switch(nextPage.id){
+        case "pageTwo":
+            // initMap();
+            break;
+        case "pageThree":
+            const confirmDescription = document.getElementById('confirmDescription');
+            confirmDescription.textContent = incidentDescription;
             modalButton.textContent = "Submit";
-            //should close modal
-        }
-        visiblePages[0].classList.add('d-none'); //hide current page
-        nextPage.classList.remove('d-none'); // display next page
+            break;
+        case "pageFour":
+            submitReportForm();
+            modalButton.setAttribute('disabled', true);
+            break;
+        case "pageFive":
+            modalButton.removeAttribute('disabled');
+            break;
+        case "pageSix": // Should be refactored
+            submitReporterForm();
+            modalButton.classList.add('d-none');
+            break;
+        default:
+            console.log("Error: Page not found");
     }
 }
 
@@ -55,7 +114,7 @@ function changePage(){
  * Save the form inputs to variables when 
  * modalButton is clicked
  */
-function saveFormInputs(){
+function saveReportFormInputs(){
     incidentDescription = descriptionInput.value; // Save the description input
     // uploadedMedia = Array.from(mediaUploads.files); // Save the uploaded media
     // uploadedMediaNames = uploadedMedia.map((file) => file.name); // Save the uploaded media names
@@ -65,20 +124,25 @@ function saveFormInputs(){
 /**
  * Submit the form to the database
  */
-async function submitForm(){
+async function submitReportForm(){
     try {
         const formData = new FormData();
-        formData.append('incident_description', incidentDescription);
+        formData.append('description', incidentDescription);
+        formData.append('location', 'placeholder location');
+        for (let [key, value] of formData.entries()) { // to see all appended values
+            console.log(`report formData: ${key}: ${value}`);
+        }
         // uploadedMedia.forEach((file) => formData.append('media', file));
         const response = await fetch(`${databaseURL}/report`, {
             method: 'POST',
-            body: formData
+            headers: {"content-type": 'application/json'},
+            body: JSON.stringify({'description': "test", 'location': 'placeholder location'}),
         });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log("response data: ", data);
+        reportId = data.results[0].id;
     }
     catch(e){
         console.log(e)
@@ -86,8 +150,43 @@ async function submitForm(){
 }
 
 
+async function submitReporterForm(){
+    const formData = new FormData();
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    try{
+        formData.append('first_name', firstName);
+        formData.append('last_name', lastName);
+        formData.append('email', email);
+        formData.append('phone_number', phone);
+        formData.append('report_id', 12);
+        // add how 
+        for (let [key, value] of formData.entries()) { // to see all appended values
+            console.log(`reporter formData: ${key}: ${value}`);
+        }
+        const response = await fetch(`${databaseURL}/reporter`, { // double check the url
+            method: 'POST',
+            headers: {"content-type": 'application/json'},
+            body: JSON.stringify({'firstName': firstName, 'lastName': lastName, 'email': email, 'phone': phone, howCanHelp: "test", 'reportId': reportId},),
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log("reporter response data: ", data);
+        
+    } catch(e){
+        console.log(e)
+    }
+}
+
+
 /**
  * See all reports from api
+ * not used as of now
  */
 async function seeReports(){
     try{
@@ -103,3 +202,103 @@ async function seeReports(){
         console.log(e)
     }
 }
+
+
+// Event listeners for the Yes and No buttons
+if (yesButton) {
+    yesButton.addEventListener('click', function(e){
+        e.preventDefault();
+        const {openPage, pages} = whatPageOpen();
+        changePage(openPage, pages); // Change the page
+    });
+}
+if (noButton) {
+    noButton.addEventListener('click', function(e){
+        e.preventDefault();
+        bootstrapModal.hide();
+    });
+}
+
+// MAP
+// let map, infoWindow;
+// let markers = [];
+
+// async function initMap() {
+
+//   // creating a map
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: -34.397, lng: 150.644 },
+//     zoom: 6,
+//   });
+
+//   // Add a click event listener to the map
+//   map.addListener('click', (event) => {
+//         addMarker(event.latLng);
+//     });
+
+//   infoWindow = new google.maps.InfoWindow();
+  
+//   const locationButton = document.createElement("button");
+//   locationButton.textContent = "Pan to Current Location";
+//   locationButton.classList.add("custom-map-control-button");
+//   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+//   locationButton.addEventListener("click", () => {
+//     // Try HTML5 geolocation.
+//     if (navigator.geolocation) {
+//       navigator.geolocation.getCurrentPosition(
+//         (position) => {
+//           const pos = {
+//             lat: position.coords.latitude,
+//             lng: position.coords.longitude,
+//           };
+
+//           infoWindow.setPosition(pos);
+//           infoWindow.setContent("Location found.");
+//           infoWindow.open(map);
+//           map.setCenter(pos);
+//         },
+//         () => {
+//           handleLocationError(true, infoWindow, map.getCenter());
+//         },
+//       );
+//     } else {
+//       // Browser doesn't support Geolocation
+//       handleLocationError(false, infoWindow, map.getCenter());
+//     }
+//   });
+// }
+
+// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+//     infoWindow.setPosition(pos);
+//     infoWindow.setContent(
+//         browserHasGeolocation
+//         ? "Error: The Geolocation service failed."
+//         : "Error: Your browser doesn't support geolocation.",
+//     );
+//     infoWindow.open(map);
+// }
+
+// // Function to add a marker at the specified location
+// function addMarker(location) {
+//     // Clear existing markers if you want only one marker at a time
+//     clearMarkers();
+
+//     // Create a new marker
+//     const marker = new google.maps.Marker({
+//         position: location,
+//         map: map,
+//     });
+
+//     // Add the marker to the markers array
+//     markers.push(marker);
+// }
+
+// // Function to clear all markers from the map
+// function clearMarkers() {
+//     for (let i = 0; i < markers.length; i++) {
+//         markers[i].setMap(null);
+//     }
+//     markers = [];
+// }
+
+// window.initMap = initMap;
