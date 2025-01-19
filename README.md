@@ -330,7 +330,7 @@ To assist individuals who have been taken or are being held against their willâ€
 <details>
 <summary>Report Form - Location </summary>  
 
-![Report Form - Location](readmedocs/)
+![Report Form - Location](readmedocs/page2.png)
 </details> 
 
 <details>
