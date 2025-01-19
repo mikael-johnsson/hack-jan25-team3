@@ -106,6 +106,15 @@ nav {
     width: 450px;
 }
 
+/* Page 3 report form */
+#confirmDescription {
+    margin-bottom: 8px;
+}
+
+#confirmLocation {
+    margin-bottom: 8px;
+}
+
 /* Page 5 report form */
 .form-container {
     display: flex;
