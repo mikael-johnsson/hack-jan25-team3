@@ -154,6 +154,11 @@ nav {
     line-height: 0.9rem;
 }
 
+/* Modal */
+textarea {
+    width: 100%;
+}
+
 /* Map */
 #map {
     height: 300px;
@@ -455,6 +460,8 @@ footer a {
         padding: 5px 5px;
         font-size: 100%;
     }
+
+
 
     #contact {
         position: relative;
