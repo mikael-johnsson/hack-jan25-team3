@@ -2,7 +2,11 @@
 html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
+}
+
+main { 
+    position: relative;
+    min-height: 100vh;
 }
 
 header, footer {
@@ -18,7 +22,6 @@ header {
     justify-content: space-between;
     position: relative;
     top: 0;
-    margin-bottom: 20px;
 }
 
 header a {
@@ -51,15 +54,15 @@ header a {
 
 nav {
     position: absolute;
+    display: none;
     background-color: #FEFDF9;
     color: #1C191F;
-    top: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
-    width: 60%;
     list-style-type: none;
-    display: none;
-    margin-left: 36%;
     padding-right: 10px;
+    z-index: 1;
+    width: 200px;
+    margin-right: 0;
 }
 
 #nav-mobile-toggle:checked~nav {
@@ -88,7 +91,6 @@ nav {
     border-radius: 12px;
 }
 
-
 #nav-safety-button {
     font-weight: bold;
     color: #ff0000;
@@ -103,9 +105,53 @@ nav {
     width: 450px;
 }
 
+/* Page headers */
+.page-header {
+    font-weight: bold;
+    font-style: initial;
+    top: 0;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    width: 80%;
+    margin: 0 20px;
+}
 
+/* Article & Context formatting */
+.article-h4 {
+    font-weight: bold;
+    padding: 5px 0;
+    text-transform: none;
+}
+
+.page-context {
+    margin: 0 20px;
+}
+
+/* Contact page */
+#contact { /* need to fix the page break */
+    display: flex;
+    position: relative;
+    width: 90%;
+    max-width: 350px;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 300px;
+    justify-content: center;
+    border: 2px solid #3a3a3a;
+    border-radius: 25px;
+}
 /* Footer */
+
+/* Map */
+#map {
+    height: 300px;
+    width: 450px;
+}
+
 footer {
+    position: absolute;
     padding: 20px 0;
     width: 100%;
     text-align: center;
@@ -120,7 +166,13 @@ footer ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    margin: 0;
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
 }
 
 
@@ -154,7 +206,10 @@ body {
 
 /* Media queries */
 @media screen and (min-width: 1200px) {
-    
+    nav {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -163,29 +218,35 @@ body {
 
 @media screen and (min-width: 768px) {
 
-    header > nav {
-        margin-left: 0;
-    }
-
     nav {
         display: block;
+        position: absolute;
         background-color: #1C191F;
         color: #FEFDF9;
         position: relative;
         box-shadow: none;
-        font-size: 90%;
+        font-size: 80%;
         padding: 0;
-        margin: 10px 10px 10px 0;
+        margin-right: 0;
+        width: 100%;
     }
 
     .nav-mobile-toggle {
         display: block;
     }
 
+    .nav-mobile-toggle-label {
+        display: none;
+    }
+
     #menu {
         display: flex;
         margin: 5px, 0;
 
+    }
+
+    .logo {
+        margin: 0
     }
 
     header li {
@@ -209,8 +270,21 @@ body {
         font-size: 100%;
     }
 
+    #contact {
+        position: relative;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 20px;
+        justify-content: center;
+        border: 2px solid #3a3a3a;
+        border-radius: 25px;
+    }
+
 }
 
 @media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 376px) {
 
 }
