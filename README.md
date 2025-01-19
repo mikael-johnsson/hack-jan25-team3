@@ -1,3 +1,4 @@
+![HAVEN Readme](readmedocs/havenreadmesun.webp)
 ## HAVEN - (Humanitarian Action for Vigilance Empowerment and Notification)
 
 [View live project here](https://mikael-johnsson.github.io/hack-jan25-team3)
