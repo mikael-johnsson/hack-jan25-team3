@@ -121,12 +121,37 @@ nav {
     border-radius: 12px;
 }
 
-#nav-safety-button {
+#safety-notmobile {
+    display: none;
+}
+
+#safety-mobile {
+    position: absolute;
+    bottom: 2%;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(28,25,31,0.8);
+    margin-right: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 1);
+    border: 0.2rem solid rgba(0,0,0,0.3);
+    width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav-safety-button-mobile {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    color: #ff0000;
-    background-color: rgb(221, 255, 0);
-    padding: 10px 20px;
-    border-radius: 12px;
+    font-size: 1.5rem;
+    padding-left: 0.75rem;
+}
+
+#nav-safety-button-mobile svg {
+
 }
 
 /* Map */
@@ -432,8 +457,7 @@ footer a {
     }
 
     #nav-safety-button {
-        padding: 5px 5px;
-        font-size: 100%;
+
     }
 
     #contact {
@@ -454,6 +478,21 @@ footer a {
         position: relative;
         max-width: 800px;
         margin: 20px auto;
+    }
+
+    #safety-notmobile {
+        display: inherit;
+    }
+    #safety-mobile {
+        display: none;
+    }
+    #nav-safety-button {
+        font-weight: bold;
+        color: #ff0000;
+        background-color: rgb(221, 255, 0);
+        border-radius: 12px;
+        padding: 5px 5px;
+        font-size: 100%;
     }
 
 }
