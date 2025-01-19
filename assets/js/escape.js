@@ -1,12 +1,14 @@
 // Logic for escape button in the nav bar: redirects the user to google and replaces the last page in
 // the history with '/news' so as not to appear suspicious
+const escapeButtonMobile = document.getElementById('safety-mobile');
+const escapeButton = document.getElementById('safety-notmobile');
+const buttons = [escapeButton, escapeButtonMobile];
 
-const escapeButton = document.getElementById('nav-safety-button');
-    escapeButton.addEventListener('click', (e) => {
+    buttons.forEach((btn) => btn.addEventListener('click', (e) => {
         e.preventDefault();
         console.log('Escape button clicked!');
         escapeNow()
-    })
+    }));
 
 document.addEventListener('keyup', (e) => {
     e.preventDefault();

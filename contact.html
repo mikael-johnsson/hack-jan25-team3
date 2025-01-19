@@ -25,8 +25,6 @@
 </head>
 
 <body>
-
-    <!-- Header -->
     <header>
         <h1 class="logo">Haven</h1>
         <input type="checkbox" id="nav-mobile-toggle" name="nav-mobile-toggle">
@@ -38,7 +36,7 @@
         <nav>
             <ul id="menu">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.html" >Home</a>
                 </li>
                 <li>
                     <a href="#" id="nav-report-button">Report</a>
@@ -52,12 +50,19 @@
                 <li>
                     <a href="contact.html" class="active">Contact</a>
                 </li>
-                <li>
-                    <a href="#" id="nav-safety-button">To Safety</a>
+                <li id="safety-notmobile">
+                    <a href="" id="nav-safety-button">To Safety</a>
                 </li>
             </ul>
         </nav>
     </header>
+    <button id="safety-mobile" aria-label="Click this button to quickly load BBC Weather - it is a quick escape in case you need it.">
+        <a href="" id="nav-safety-button-mobile">Quick exit</a>
+        <svg aria-label="An arrow pointing left " width="2rem" height="2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19" stroke="rgb(221, 255, 0)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5L19 12L12 19" stroke="rgb(221, 255, 0)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 
     <main class="contact-main">
         <div class="contact-header">
