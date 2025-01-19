@@ -109,6 +109,15 @@ nav {
     padding-left: 1rem;
 }
 
+#nav-report-button {
+    font-weight: bold;
+    color: #000000;
+    background-color: rgb(221, 255, 0);
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+
 .active {
     border-bottom: 1px solid;
 }
