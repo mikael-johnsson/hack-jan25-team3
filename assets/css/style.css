@@ -6,7 +6,7 @@ html, body {
 }
 
 main { 
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
 }
@@ -14,6 +14,16 @@ main {
 header, footer {
     background-color: #1C191F;
     color: #FEFDF9;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 80vh;
+    background: radial-gradient(circle, white 50%, #a9a9a9);
 }
 
 /* Header */
@@ -46,6 +56,24 @@ header a {
 .logo {
     color: #FEFDF9;
     margin: 0;
+}
+
+/* Front page image  */
+
+.hero-container {
+    background-image: url('../images/background.webp');
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-container h1 {
+    padding: 10px;
+    margin: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Navigation & toggles - Mobile first  */
@@ -296,16 +324,18 @@ a:hover {
     margin-top: 50px;
     margin-left: 20%;
     margin-right: 20%;
+    margin-bottom: 20px;
     justify-content: center;
     border: 2px solid #3a3a3a;
     border-radius: 25px;
+}
 
 #contact-form {
-        min-width: 200px;
-        max-width: 320px;
+    min-width: 200px;
+    max-width: 320px;
      
     }
-}
+
 /* Footer */
 
 /* Map */
@@ -316,7 +346,6 @@ a:hover {
 
 footer {
     position: relative;
-    margin-top: 20px;
     padding: 20px 0;
     width: 100%;
     text-align: center;
@@ -337,35 +366,6 @@ footer a {
     color: inherit;
     text-decoration: none;
 }
-
-
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-height: 80vh;
-
-    background: radial-gradient(circle, white 50%, #a9a9a9);
-}
-
-.hero-container {
-    background-image: url('../images/background.webp');
-    background-size: cover;
-    background-position: center;
-    height: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-container h1 {
-    padding: 10px;
-    margin: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
 
 /* Media queries */
 @media screen and (min-width: 1200px) {
@@ -405,6 +405,7 @@ body {
     #menu {
         display: flex;
         margin: 5px, 0;
+        justify-content: end;
 
     }
 

@@ -16,127 +16,131 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <!--Fontawesome link-->
-    <script src="https://kit.fontawesome.com/685977a0ed.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/685977a0ed.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-        <!-- Header -->
-        <header>
-            <h1 class="logo">Haven</h1>
-            <div class="burger-container">
-                <input type="checkbox" id="nav-mobile-toggle" name="nav-mobile-toggle">
-                <label for="nav-mobile-toggle" class="nav-mobile-toggle">
-                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
-                </label>
-            </div>
+    <!-- Header -->
+    <header>
+        <h1 class="logo">Haven</h1>
+            <input type="checkbox" id="nav-mobile-toggle" name="nav-mobile-toggle">
+            <label for="nav-mobile-toggle" class="nav-mobile-toggle">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </label>
+
         <!-- Navbar here -->
-            <nav>
-                <ul id="menu">
-                    <li>
-                        <a href="index.html" class="active">Home</a>
-                    </li>
-                    <li>
-                        <a href="#" id="nav-report-button">Report</a>
-                    </li>
-                    <li>
-                        <a href="haven.html">Haven</a>
-                    </li>
-                    <li>
-                        <a href="resources.html">Resources</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <a href="" id="nav-safety-button">To Safety</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <nav>
+            <ul id="menu">
+                <li>
+                    <a href="index.html" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-report-button">Report</a>
+                </li>
+                <li>
+                    <a href="haven.html">Haven</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="" id="nav-safety-button">To Safety</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-        <main>
+    <main>
 
-    <div class="container">
+        <div class="hero-container">
             <!-- hero image & call to action -->
-            <div class="hero-container">
+            <div>
                 <div class="hero-content text-center">
                     <h1>This is HAVEN</h1>
 
                     <!-- Button to trigger modal -->
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#reportModal">Report an Incident</button>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#reportModal">Report
+                        an Incident</button>
 
                 </div>
             </div>
-        </main>
-    </div>
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Report incident</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form action="" method="post" enctype='multipart/form-data' id="reportForm">
-                <div id="pageOne" class="page ">
-                    <label for="incidentDescription">Describe what happened</label>
-                    <textarea name="incidentDescription" id="incidentDescription" rows="10" cols="40"></textarea>
-                </div>
-                <div id="pageTwo" class="page d-none">
-                    <div id="map"></div>
-                </div>
-                <div id="pageThree" class="page d-none">
-                    <h6>Information to be submitted:</h6>
-                    <p class="bold">Incident description:</p>
-                    <p id="confirmDescription">confirmation placeholder p</p>
-                    <p class="bold">Location of incident:</p>
-                    <p id="confirmLocation">location placeholder</p>
-                </div>
-              </form>
-              <form action="" method="post" id="reporterForm" class="d-none">
-                <div id="pageFour" class="page d-none">
-                    <h6>Thank you for submitting your report.</h6>
-                    <p>To receive confirmation from our team regarding your report, please select “Yes” and complete the form. If you prefer to remain anonymous and receive no form of correspondence, select "No." Thank you.</p>
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No</button>
-                    <button class="btn btn-success" id="yesBtn">Yes</button>
-                </div>
-                <div id="pageFive" class="page d-none">
-                    <label for="firstName">First name</label>
-                    <input type="text" name="firstName" id="firstName">
-                    <label for="lastName">Last name</label>
-                    <input type="text" name="lastName" id="lastName">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                    <label for="phone">Phone</label>
-                    <input type="tel" name="phone" id="phone">
-                </div>
-                <div id="pageSix" class="page d-none">
-                    <h6>Thank you for assisting the authorities</h6>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="modalButton">Continue</button>
-            </div>
-          </div>
         </div>
-    </div>                   
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Report incident</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="post" enctype='multipart/form-data' id="reportForm">
+                            <div id="pageOne" class="page ">
+                                <label for="incidentDescription">Describe what happened</label>
+                                <textarea name="incidentDescription" id="incidentDescription" rows="10"
+                                    cols="40"></textarea>
+                            </div>
+                            <div id="pageTwo" class="page d-none">
+                                <div id="map"></div>
+                            </div>
+                            <div id="pageThree" class="page d-none">
+                                <h6>Information to be submitted:</h6>
+                                <p class="bold">Incident description:</p>
+                                <p id="confirmDescription">confirmation placeholder p</p>
+                                <p class="bold">Location of incident:</p>
+                                <p id="confirmLocation">location placeholder</p>
+                            </div>
+                        </form>
+                        <form action="" method="post" id="reporterForm" class="d-none">
+                            <div id="pageFour" class="page d-none">
+                                <h6>Thank you for submitting your report.</h6>
+                                <p>To receive confirmation from our team regarding your report, please select “Yes” and
+                                    complete the form. If you prefer to remain anonymous and receive no form of
+                                    correspondence, select "No." Thank you.</p>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No</button>
+                                <button class="btn btn-success" id="yesBtn">Yes</button>
+                            </div>
+                            <div id="pageFive" class="page d-none">
+                                <label for="firstName">First name</label>
+                                <input type="text" name="firstName" id="firstName">
+                                <label for="lastName">Last name</label>
+                                <input type="text" name="lastName" id="lastName">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email">
+                                <label for="phone">Phone</label>
+                                <input type="tel" name="phone" id="phone">
+                            </div>
+                            <div id="pageSix" class="page d-none">
+                                <h6>Thank you for assisting the authorities</h6>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="modalButton">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer-front-page">
         <ul>
-            <li>Quick Links</li>
-            <li>The Team</li>
-            <li>Organisations</li>
-            <li>Contact Us</li>
+            <li><a href="haven.html">Haven</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><span style="font-size:10px"><i class="fa-regular fa-copyright"></i>2025 Haven. All rights reserved.</span></li>
         </ul>
     </footer>
-    
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -149,14 +153,14 @@
     <script src="assets/js/script.js"></script>
     <!-- Escape button JS -->
     <script src="assets/js/escape.js"></script>
-    
+
     <!-- Map loader -->
     <script>
-        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-          key: "AIzaSyCFMCipQD60N3DxlokjcK-ehosH6wa_ss4",
-          v: "weekly",
+        (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
+            key: "AIzaSyCFMCipQD60N3DxlokjcK-ehosH6wa_ss4",
+            v: "weekly",
         });
-      </script>
+    </script>
 </body>
 
 </html>
