@@ -145,7 +145,7 @@ fieldset {
     border-radius: 8px;
     padding: 20px;
     width: 300px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 /* Style input fields */
@@ -162,8 +162,8 @@ input[type="tel"] {
 
 #pageFive label {
     font-weight: bold;
-    display: block; /* Ensure labels and inputs are on separate lines */
-    margin-bottom: 5px; /* Add space between label and input */
+    display: block; 
+    margin-bottom: 5px; 
 }
 
 legend {
@@ -189,7 +189,7 @@ legend {
     text-transform: none;
     margin-top: 20px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #ddd; /* Add a subtle underline */
+    border-bottom: 1px solid #ddd; 
     padding-bottom: 5px;
 }
 
@@ -197,16 +197,48 @@ legend {
     margin: 0 20px;
 }
 
+/* HAVEN page */
+.haven-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 900px; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.haven-page-header {
+    text-align: left;
+    width: 100%;
+}
+
+.h1-page-header {
+    margin-bottom: 15px;
+}
+
+.haven-context {
+    line-height: 1.6; 
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* Resources page */
 .resources-main {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     margin: 0 auto;
-    max-width: 1200px; /* Restrict the width for better readability */
-    background-color: #f9f9f9; /* Light background for contrast */
-    border-radius: 8px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+    max-width: 1200px; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .resources-page-header{
@@ -220,16 +252,16 @@ legend {
 }
 
 .resources-content {
-    width: 100%; /* Ensure content spans the main container */
+    width: 100%; 
 }
 
 .article {
-    background-color: #fff; /* White background for clarity */
-    border: 1px solid #ddd; /* Subtle border for separation */
+    background-color: #fff; 
+    border: 1px solid #ddd; 
     border-radius: 8px;
-    margin-bottom: 20px; /* Space between articles */
+    margin-bottom: 20px; 
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Slight shadow for emphasis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
 }
 
 .article-header {
@@ -237,7 +269,7 @@ legend {
 }
 
 .article-content {
-    line-height: 1.6; /* Improve readability */
+    line-height: 1.6; 
     color: #666;
 }
 
