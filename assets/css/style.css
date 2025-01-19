@@ -208,7 +208,7 @@ legend {
     max-width: 900px; 
     background-color: #f9f9f9; 
     border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
 }
 
 .haven-page-header {
@@ -240,7 +240,7 @@ p {
     min-height: auto;
     background-color: #f9f9f9; 
     border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
     
 }
 
@@ -264,7 +264,7 @@ p {
     border-radius: 8px;
     margin-bottom: 20px; 
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .article-header {
@@ -302,6 +302,7 @@ a:hover {
     justify-content: center;
     border: 2px solid #3a3a3a;
     border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
 #contact-form {
         min-width: 200px;
@@ -320,7 +321,7 @@ a:hover {
     min-height: auto; 
     background-color: #f9f9f9; 
     border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
 }
 
 .contact-header {
@@ -355,8 +356,8 @@ textarea {
 .text-input:focus, 
 textarea:focus {
     outline: none;
-    border-color: #00050a; /* Highlight border on focus */
-    box-shadow: 0 0 4px rgba(27, 27, 27, 0.5); /* Subtle shadow on focus */
+    border-color: #00050a; 
+    box-shadow: 0 0 4px rgba(27, 27, 27, 0.5); 
 }
 
 .radio-buttons {
