@@ -110,6 +110,10 @@ nav {
     padding-left: 1rem;
 }
 
+#nav-safety-button {
+    display: none;
+}
+
 .active {
     border-bottom: 1px solid;
 }
@@ -519,6 +523,10 @@ footer a {
         position: relative;
         max-width: 800px;
         margin: 20px auto;
+    }
+
+    #nav-safety-button {
+        display: inherit;
     }
 
 }
