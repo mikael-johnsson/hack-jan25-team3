@@ -268,7 +268,7 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 
   # Colour Scheme
 
-  [colours]()
+  ![colours](readmedocs/colours.png)
 
   # Typography
 
