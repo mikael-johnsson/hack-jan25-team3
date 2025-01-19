@@ -17,5 +17,4 @@ document.addEventListener('keydown', (e) => {
 
 const escapeNow = () => {
     window.location.replace("https://google.com");
-    history.replaceState(null,'','/news');
 }
