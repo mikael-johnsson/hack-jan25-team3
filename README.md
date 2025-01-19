@@ -505,6 +505,7 @@ These features aim to create a robust support network and ensure that victims ha
 | Sarah Darlington | [Github](https://github.com/Sazzzel) | [LinkedIn](https://www.linkedin.com/in/sarah-darlington-dev/) |
 | Mikael Johnsson | [Github](https://github.com/mikael-johnsson) | [LinkedIn](https://www.linkedin.com/in/mikael-johnsson/) |
 | Maarten Ridder | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
-| Gareth | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
+| Gareth Whitley | [Github](https://github.com/MJRidder) | [LinkedIn](https://www.linkedin.com/in/maartenridder1/) |
+| William Waldron-Hyden | [Github](https://github.com/Will-WHyd) | [LinkedIn](https://www.linkedin.com/in/william-waldron-hyden/) |
 
 [Back to Table of Contents](#table-of-contents)
