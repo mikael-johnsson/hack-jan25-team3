@@ -24,7 +24,7 @@ const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api";
  */
 modalButton.addEventListener('click', function(event){
     event.preventDefault();
-    saveReportFormInputs(); // Save the form inputs
+    saveReportFormInputs(event); // Save the form inputs
     const {openPage, pages} = whatPageOpen();
     changePage(openPage, pages); // Change the page
 });
@@ -154,6 +154,7 @@ async function submitReportForm(){
         }
         const data = await response.json();
         reportId = data.results[0].id;
+
     }
     catch(e){
         console.log(e)
