@@ -106,6 +106,46 @@ nav {
     width: 450px;
 }
 
+/* Page 5 report form */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left; 
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional styling */
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%; 
+    padding: 8px;
+    margin: 10px 0; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#pageFive label {
+    font-weight: bold;
+    display: block; /* Ensure labels and inputs are on separate lines */
+    margin-bottom: 5px; /* Add space between label and input */
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
 /* Page headers */
 .page-header {
     font-weight: bold;
@@ -297,6 +337,10 @@ body {
 }
 
 @media screen and (min-width: 576px) {
+
+    fieldset {
+        width: 90%; /* Adjust for smaller screens */
+    }
 }
 
 @media screen and (min-width: 376px) {
