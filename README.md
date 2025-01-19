@@ -301,12 +301,25 @@ Our website includes a floating "To Safety" button designed to protect users in 
 
 ### Reporting Form
 To assist individuals who have been taken or are being held against their will—or anyone who has encountered someone in need of help—we have provided a report form. This form includes:
-- A description box for detailed information.
-- The option to upload photos or videos as evidence.
-- Integration with the [What3Words API](https://what3words.com/pretty.needed.chill) to allow users to share their location precisely (within a 3m x 3m area).
 
-Users can also indicate whether they are comfortable being contacted for additional information. This feature ensures that users can remain anonymous if they prefer.
+1. **Description Box**:
+- There is a large text box where you can type in detailed information about what is happening. For example, you can describe the situation or share any important observations.
 
+2. **Using the Map to Add a Location**:
+- The map starts with a marker placed in **Dublin** by default.
+- There’s a button that lets you set the marker to your current location. To use this, you will need to allow your browser to access your location. The marker will then move to where you are.
+  - You can also drag the marker on the map to place it exactly where the event is happening.
+- The coordinates are saved and are automatically included when you submit the form.
+
+3. **Contact Preferences**:
+- You can choose whether or not you want to be contacted after submitting the form. If you prefer to stay anonymous, you can. This allows you to share information in the way that feels safest for you.
+
+4. **How to Use It**:
+- Start by typing the details of the situation in the description box.
+- Then, use the map to add a location by either clicking the button to set your current location or dragging the marker to the right spot.
+- Submit the form containing the information you provided, including the location
+- Choose whether you want to be contacted or not.
+- If you do fill out the Contact details and submit the your details.
 
 <details open>
 <summary>Report Form - Report incident </summary>  
@@ -317,7 +330,7 @@ Users can also indicate whether they are comfortable being contacted for additio
 <details>
 <summary>Report Form - Location </summary>  
 
-![Report Form - Location](readmedocs/)
+![Report Form - Location](readmedocs/page2.png)
 </details> 
 
 <details>
