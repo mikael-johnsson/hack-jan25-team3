@@ -8,15 +8,15 @@ const escapeButton = document.getElementById('nav-safety-button');
         escapeNow()
     })
 
-document.addEventListener('keydown', (e) => {
-    console.log('Escape keyboard shortcut activated');
-    if (e.ctrlKey && e.event.key === 'e') {
-        e.preventDefault();
+document.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    console.log('Escape keyboard shortcut activated',e.key);
+    if (e.ctrlKey && e.key === 'z') {
         escapeNow();
     }
 })
 
 const escapeNow = () => {
         window.location.replace("https://www.bbc.co.uk/weather/");
-
 }
+
