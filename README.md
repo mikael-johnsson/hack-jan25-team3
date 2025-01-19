@@ -1,11 +1,10 @@
 ![HAVEN Readme](readmedocs/havenreadmesun.webp)
 ## HAVEN - (Humanitarian Action for Vigilance Empowerment and Notification)
 
-[View live project here](https://mikael-johnsson.github.io/hack-jan25-team3)
-
-<br>
-
 ![screenshot of Home page](readmedocs/responsive.png)
+
+
+[View our live project](https://mikael-johnsson.github.io/hack-jan25-team3)
 
 ---
 
@@ -43,6 +42,7 @@
   * [CSS Validation using W3C Validation](#css-validation-using-w3c-validation)
   * [Lighthouse scores via Chrome Developer Tools](#lighthouse-scores-via-chrome-developer-tools)
 * [Credits](#credits) 
+* [Team](#team)
 
 ---
 
@@ -307,6 +307,37 @@ To assist individuals who have been taken or are being held against their willâ€
 
 Users can also indicate whether they are comfortable being contacted for additional information. This feature ensures that users can remain anonymous if they prefer.
 
+
+<details open>
+<summary>Report Form - Report incident </summary>  
+
+![Report Form - Report incident](readmedocs/page1.png)
+</details> 
+
+<details>
+<summary>Report Form - Location </summary>  
+
+![Report Form - Location](readmedocs/)
+</details> 
+
+<details>
+<summary>Report Form - Information to be submitted </summary>  
+
+![Report Form - Information to be submitted](readmedocs/page3.png)
+</details> 
+
+<details>
+<summary>Report Form - Can we contact you? </summary>  
+
+![Report Form - Can we contact you?](readmedocs/page4.png)
+</details> 
+
+<details>
+<summary>Report Form - Contact Information </summary>  
+
+![Report Form - Contact Information](readmedocs/page5.png)
+</details> 
+
 ### Desktop View
 
 
@@ -386,8 +417,6 @@ GitHub was used to deploy the website. These were the steps taken to acheive thi
 [Back to Table of Contents](#table-of-contents)
 
 ---
-
-## Future Features
 
 ## Future Features  
 
