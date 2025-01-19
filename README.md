@@ -284,14 +284,19 @@ Our primary goal is to create a safe, accessible, and educational resource that 
 
 ### Navbar
  
+ ![Navbar](readmedocs/nav.png)
 
 ### Hero Image
 
+ ![colours](readmedocs/background.webp)
+
 ### Footer
 
+ ![Footer](readmedocs/footer.png)
 
 
-### Safety Button
+
+### To Safety Button
 Our website includes a floating "To Safety" button designed to protect users in potentially dangerous situations. When clicked, the user is redirected to a different website, and their browsing history is cleared. This ensures that no one can trace their visit to our website.
 
 ### Reporting Form
