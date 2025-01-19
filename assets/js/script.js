@@ -129,16 +129,16 @@ async function submitReportForm(){
         const formData = new FormData();
         formData.append('incident_description', incidentDescription);
         // uploadedMedia.forEach((file) => formData.append('media', file));
-        // const response = await fetch(`${databaseURL}/report`, {
-        //     method: 'POST',
-        //     body: formData
-        // });
-        // if (!response.ok) {
-        //     throw new Error('Network response was not ok');
-        // }
-        // const data = await response.json();
-        // //save the report id to local storage, to be used in the next page
-        // console.log("response data: ", data);
+        const response = await fetch(`${databaseURL}/report`, {
+            method: 'POST',
+            body: formData
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        //save the report id to local storage, to be used in the next page
+        console.log("response data: ", data);
     }
     catch(e){
         console.log(e)
@@ -157,15 +157,15 @@ async function submitReporterForm(){
         formData.append('email', email);
         formData.append('phone_number', phone);
         formData.append('report_id', reportId);
-        // const response = await fetch(`${databaseURL}/reporters`, { // double check the url
-        //     method: 'POST',
-        //     body: formData
-        // });
-        // if (!response.ok) {
-        //     throw new Error('Network response was not ok');
-        // }
-        // const data = await response.json();
-        // console.log("data: ", data);
+        const response = await fetch(`${databaseURL}/reporters`, { // double check the url
+            method: 'POST',
+            body: formData
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log("data: ", data);
         console.log(formData);
     } catch(e){
         console.log(e)
