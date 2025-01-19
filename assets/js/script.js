@@ -8,16 +8,10 @@ const reporterForm = formModal.querySelector('#reporterForm'); // Reporter Form 
 const noButton = formModal.querySelector('#noBtn'); // No button
 const yesButton = formModal.querySelector('#yesBtn'); // Yes button
 const descriptionInput = document.getElementById('incidentDescription'); // Description input element
-// const mediaUploads = document.getElementById('mediaUpload'); // Media upload input element
 
 // Form Variables to save data temporarily
-let incidentDescription= "p-holder";
-let reportId;
-// let uploadedMedia = [];
-// let uploadedMediaNames = [];
-
-// What3words API key
-const mapAPIKey = "XLOEYWA8"; // API key for what3words
+let incidentDescription= "placeholder description";
+let reportId = "placeholder id";
 
 // Database URLs
 const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to the database
@@ -116,27 +110,18 @@ function changePage(openPage, pages){
  */
 function saveReportFormInputs(){
     incidentDescription = descriptionInput.value; // Save the description input
-    // uploadedMedia = Array.from(mediaUploads.files); // Save the uploaded media
-    // uploadedMediaNames = uploadedMedia.map((file) => file.name); // Save the uploaded media names
 }
 
 
 /**
- * Submit the form to the database
+ * Submit the report form to the database
  */
 async function submitReportForm(){
     try {
-        const formData = new FormData();
-        formData.append('description', incidentDescription);
-        formData.append('location', 'placeholder location');
-        for (let [key, value] of formData.entries()) { // to see all appended values
-            console.log(`report formData: ${key}: ${value}`);
-        }
-        // uploadedMedia.forEach((file) => formData.append('media', file));
         const response = await fetch(`${databaseURL}/report`, {
             method: 'POST',
             headers: {"content-type": 'application/json'},
-            body: JSON.stringify({'description': "test", 'location': 'placeholder location'}),
+            body: JSON.stringify({'description': incidentDescription, 'location': 'placeholder location'}),
         });
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -150,22 +135,16 @@ async function submitReportForm(){
 }
 
 
+/**
+ * Submit the reporter form to the database
+ */
 async function submitReporterForm(){
-    const formData = new FormData();
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
+    // add howCanHelp to the form
     try{
-        formData.append('first_name', firstName);
-        formData.append('last_name', lastName);
-        formData.append('email', email);
-        formData.append('phone_number', phone);
-        formData.append('report_id', 12);
-        // add how 
-        for (let [key, value] of formData.entries()) { // to see all appended values
-            console.log(`reporter formData: ${key}: ${value}`);
-        }
         const response = await fetch(`${databaseURL}/reporter`, { // double check the url
             method: 'POST',
             headers: {"content-type": 'application/json'},
@@ -175,9 +154,7 @@ async function submitReporterForm(){
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        console.log("reporter response data: ", data);
-        
+        const data = await response.json(); // not needed as of now
     } catch(e){
         console.log(e)
     }
