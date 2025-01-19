@@ -267,11 +267,12 @@ async function initMap() {
           };
 
           incidentLocation = pos;
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("Location found.");
-          infoWindow.open(map);
+        //   infoWindow.setPosition(pos);
+        //   infoWindow.setContent("Location found.");
+        //   infoWindow.open(map);
           map.setCenter(pos);
           map.setZoom(15);
+          marker.position = pos;
         },
         () => {
           handleLocationError(true, infoWindow, map.getCenter());
@@ -294,4 +295,4 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-window.initMap = initMap;
+// window.initMap = initMap;
