@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     font-size: 18px;
     font-weight: 500;
+
 }
 
 main { 
@@ -235,7 +236,7 @@ legend {
     max-width: 900px; 
     background-color: #f9f9f9; 
     border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
 }
 
 .haven-page-header {
@@ -267,7 +268,7 @@ p {
     min-height: auto;
     background-color: #f9f9f9; 
     border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
     
 }
 
@@ -291,7 +292,7 @@ p {
     border-radius: 8px;
     margin-bottom: 20px; 
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .article-header {
@@ -330,15 +331,77 @@ a:hover {
     justify-content: center;
     border: 2px solid #3a3a3a;
     border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #contact-form {
     min-width: 200px;
     max-width: 320px;
      
-    }
+}
 
-/* Footer */
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 900px; 
+    min-height: auto; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+}
+
+.contact-header {
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.page-header {
+    margin-bottom: 15px;
+}
+
+.page-context {
+    line-height: 1.6;
+    margin-bottom: 30px; 
+}
+
+#contact-form {
+    width: 100%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px; 
+    margin-bottom: 10px;
+}
+
+.text-input:focus, 
+textarea:focus {
+    outline: none;
+    border-color: #00050a; 
+    box-shadow: 0 0 4px rgba(27, 27, 27, 0.5); 
+}
+
+.radio-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+}
+.get-in-touch-button {
+   border-radius: 6px;
+}
+
+.get-in-touch-button:hover {
+    background-color: #00050a;
+    color: #f9f9f9;
+}
 
 /* Map */
 #map {
@@ -346,12 +409,14 @@ a:hover {
     width: 450px;
 }
 
+/* Footer */
 footer {
     position: relative;
     padding: 20px 0;
     width: 100%;
     text-align: center;
     justify-content: space-between;
+    bottom: 0;
 }
 
 footer ul {
@@ -461,7 +526,7 @@ footer a {
 @media screen and (min-width: 576px) {
 
     fieldset {
-        width: 90%; /* Adjust for smaller screens */
+        width: 90%; 
     }
 }
 
