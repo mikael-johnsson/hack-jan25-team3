@@ -411,12 +411,17 @@ These features aim to create a robust support network and ensure that victims ha
 
 ---
 
-# Technologies Used
+# Tech Stack
 
 ## Languages Used 
+- HTML
+- CSS
+- JavaScript
 
 ## Frameworks, Libraries, Technologies & Programs Used
-
+- Bootstrap
+- NodeJS
+- ExpressJS
 
 [Back to Table of Contents](#table-of-contents)
 
