@@ -117,6 +117,10 @@ nav {
     padding-left: 1rem;
 }
 
+#nav-safety-button {
+    display: none;
+}
+
 .active {
     border-bottom: 1px solid;
 }
@@ -534,8 +538,9 @@ footer a {
         margin: 20px auto;
     }
 
-    /* Navbar TEST  */
-    
+    #nav-safety-button {
+        display: inherit;
+    }
 
 }
 
