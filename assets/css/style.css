@@ -1,6 +1,8 @@
 /* General styles */
 html, body {
     height: 100%;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 main { 
@@ -143,7 +145,7 @@ fieldset {
     border-radius: 8px;
     padding: 20px;
     width: 300px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 /* Style input fields */
@@ -160,8 +162,8 @@ input[type="tel"] {
 
 #pageFive label {
     font-weight: bold;
-    display: block; /* Ensure labels and inputs are on separate lines */
-    margin-bottom: 5px; /* Add space between label and input */
+    display: block; 
+    margin-bottom: 5px; 
 }
 
 legend {
@@ -184,12 +186,104 @@ legend {
 /* Article & Context formatting */
 .article-h4 {
     font-weight: bold;
-    padding: 5px 0;
     text-transform: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 5px;
 }
 
 .page-context {
     margin: 0 20px;
+}
+
+/* HAVEN page */
+.haven-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 900px; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.haven-page-header {
+    text-align: left;
+    width: 100%;
+}
+
+.h1-page-header {
+    margin-bottom: 15px;
+}
+
+.haven-context {
+    line-height: 1.6; 
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* Resources page */
+.resources-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.resources-page-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.h1-page-header {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.resources-content {
+    width: 100%; 
+}
+
+.article {
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    margin-bottom: 20px; 
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
+
+.article-header {
+    margin-bottom: 15px;
+}
+
+.article-content {
+    line-height: 1.6; 
+    color: #666;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+}
+
+a:hover {
+    color: blue;
 }
 
 /* Contact page */
@@ -209,6 +303,7 @@ legend {
 #contact-form {
         min-width: 200px;
         max-width: 320px;
+     
     }
 }
 /* Footer */
@@ -221,7 +316,7 @@ legend {
 
 footer {
     position: relative;
-    margin-top: auto;
+    margin-top: 20px;
     padding: 20px 0;
     width: 100%;
     text-align: center;
