@@ -119,6 +119,7 @@ function saveReportFormInputs(){
 function clearModal(){
     descriptionInput.value = "";
     reportId = "";
+    incidentLocation = {};
     reportForm.classList.remove('d-none');
     reporterForm.classList.add('d-none');
     const pages = Array.from(formModal.querySelectorAll('.page'));
@@ -223,6 +224,7 @@ if (noButton) {
 let map, infoWindow;
 
 async function initMap() {
+    
     // Dublin
   const initPosition = { lat: 53.343, lng: -6.283 };
   
@@ -247,6 +249,15 @@ async function initMap() {
     title: "Dublin",
   });
 
+  if(marker){
+    google.maps.event.clearListeners(marker, 'dragend');
+    console.log("cleared listeners");
+    }
+
+  marker.addListener("dragend", (e) => {
+    incidentLocation = { lat: e.latLng.lat(), lng: e.latLng.lng() };
+  })
+
 
   // Current location button
   infoWindow = new google.maps.InfoWindow();
@@ -267,11 +278,8 @@ async function initMap() {
           };
 
           incidentLocation = pos;
-        //   infoWindow.setPosition(pos);
-        //   infoWindow.setContent("Location found.");
-        //   infoWindow.open(map);
           map.setCenter(pos);
-          map.setZoom(15);
+          map.setZoom(16);
           marker.position = pos;
         },
         () => {
@@ -295,4 +303,4 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-// window.initMap = initMap;
+window.initMap = initMap;
