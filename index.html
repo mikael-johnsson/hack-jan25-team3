@@ -80,39 +80,61 @@
         </div>
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Report incident</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="" method="post" enctype='multipart/form-data' id="reportForm">
-                            <div id="pageOne" class="page ">
-                                <label for="incidentDescription">Describe what happened</label>
-                                <textarea name="incidentDescription" id="incidentDescription" rows="10"
-                                    cols="40"></textarea>
-                                <!-- <label for="mediaUpload">Add img/video</label>
-                        <input type="file" name="mediaUpload" id="mediaUpload" accept="image/*, video/*"> -->
-                            </div>
-                            <div id="pageTwo" class="page d-none">
-                                <p>Page 2 / map</p>
-                            </div>
-                            <div id="pageThree" class="page d-none">
-                                <p id="confirmDescription">confirmation placeholder p</p>
-                                <p id="confirmMedia">confirmation placeholder p for img</p>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="submitButton">Continue</button>
-                    </div>
-                </div>
+           <!-- Modal -->
+    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Report incident</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+              <form action="" method="post" enctype='multipart/form-data' id="reportForm">
+                <div id="pageOne" class="page ">
+                    <label for="incidentDescription">Describe what happened</label>
+                    <textarea name="incidentDescription" id="incidentDescription" rows="10" cols="40"></textarea>
+                    <!-- <label for="mediaUpload">Add img/video</label>
+                    <input type="file" name="mediaUpload" id="mediaUpload" accept="image/*, video/*"> -->
+                </div>
+                <div id="pageTwo" class="page d-none">
+                    <p>Page 2 / map</p>
+                    <div id="map"></div>
+                </div>
+                <div id="pageThree" class="page d-none">
+                    <h6>Information to be submitted:</h6>
+                    <p id="confirmDescription">confirmation placeholder p</p>
+                    <!-- <p id="confirmMedia">confirmation placeholder p for img</p> -->
+                </div>
+              </form>
+              <form action="" method="post" id="reporterForm" class="d-none">
+                <div id="pageFour" class="page d-none">
+                    <h6>Thank you for submitting your report.</h6>
+                    <p>Would you mind sharing your personal information to let the authorities contact you?</p>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No</button>
+                    <button class="btn btn-success" id="yesBtn">Yes</button>
+                </div>
+                <div id="pageFive" class="page d-none">
+                    <label for="firstName">First name</label>
+                    <input type="text" name="firstName" id="firstName">
+                    <label for="lastName">Last name</label>
+                    <input type="text" name="lastName" id="lastName">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone">
+                </div>
+                <div id="pageSix" class="page d-none">
+                    <h6>Thank you for assisting the authorities</h6>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="modalButton">Continue</button>
+            </div>
+          </div>
         </div>
+    </div>        
 
         <!-- Footer -->
         <footer>
