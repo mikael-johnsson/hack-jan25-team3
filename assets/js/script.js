@@ -80,7 +80,7 @@ function changePage(openPage, pages){
     
     switch(nextPage.id){
         case "pageTwo":
-            // initMap();
+            initMap();
             break;
         case "pageThree":
             const confirmDescription = document.getElementById('confirmDescription');
@@ -217,86 +217,28 @@ if (noButton) {
 }
 
 
-// MAP
-let map, infoWindow;
-let markers = [];
+// Initialize and add the map
+let map;
 
 async function initMap() {
+  // The location of Uluru
+  const position = { lat: -25.344, lng: 131.031 };
+  // Request needed libraries.
+  //@ts-ignore
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-  // creating a map
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 6,
+  // The map, centered at Uluru
+  map = new Map(document.getElementById("map"), {
+    zoom: 4,
+    center: position,
+    mapId: "DEMO_MAP_ID",
   });
 
-  // Add a click event listener to the map
-  map.addListener('click', (event) => {
-        addMarker(event.latLng);
-    });
-
-  infoWindow = new google.maps.InfoWindow();
-  
-  const locationButton = document.createElement("button");
-  locationButton.textContent = "Pan to Current Location";
-  locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-  locationButton.addEventListener("click", () => {
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("Location found.");
-          infoWindow.open(map);
-          map.setCenter(pos);
-        },
-        () => {
-          handleLocationError(true, infoWindow, map.getCenter());
-        },
-      );
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
+  // The marker, positioned at Uluru
+  const marker = new AdvancedMarkerElement({
+    map: map,
+    position: position,
+    title: "Uluru",
   });
 }
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(
-        browserHasGeolocation
-        ? "Error: The Geolocation service failed."
-        : "Error: Your browser doesn't support geolocation.",
-    );
-    infoWindow.open(map);
-}
-
-// Function to add a marker at the specified location
-function addMarker(location) {
-    // Clear existing markers if you want only one marker at a time
-    clearMarkers();
-
-    // Create a new marker
-    const marker = new google.maps.Marker({
-        position: location,
-        map: map,
-    });
-
-    // Add the marker to the markers array
-    markers.push(marker);
-}
-
-// Function to clear all markers from the map
-function clearMarkers() {
-    for (let i = 0; i < markers.length; i++) {
-        markers[i].setMap(null);
-    }
-    markers = [];
-}
-
-window.initMap = initMap;
