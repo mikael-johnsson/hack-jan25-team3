@@ -53,7 +53,7 @@ The website must aim to raise awareness about human trafficking and modern slave
 It should focus primarily on human trafficking as the central issue.
 
 2. User Safety
-Include a "To Safety" button that redirects users to a different site and clears the browser history to ensure privacy and safety.
+Include a "To Safety" button that redirects users to a different site and clears the last page in the browser history to ensure privacy and safety.
 The feature must operate seamlessly to prevent detection by unauthorized parties.
 
 3. Reporting Features
