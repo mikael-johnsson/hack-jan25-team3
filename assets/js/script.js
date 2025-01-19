@@ -118,6 +118,8 @@ function saveReportFormInputs(){
 function clearModal(){
     descriptionInput.value = "";
     reportId = "";
+    reportForm.classList.remove('d-none');
+    reporterForm.classList.add('d-none');
     const pages = Array.from(formModal.querySelectorAll('.page'));
     pages.forEach(page => {
         page.classList.add('d-none');
