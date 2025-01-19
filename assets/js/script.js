@@ -94,7 +94,7 @@ function changePage(openPage, pages){
         case "pageFive":
             modalButton.removeAttribute('disabled');
             break;
-        case "pageSix": // Should be refactored
+        case "pageSix":
             submitReporterForm();
             modalButton.classList.add('d-none');
             break;
@@ -111,6 +111,24 @@ function changePage(openPage, pages){
 function saveReportFormInputs(){
     incidentDescription = descriptionInput.value; // Save the description input
 }
+
+/**
+ * Clear the modal when it is closed and reset open page to pageOne
+ */
+function clearModal(){
+    descriptionInput.value = "";
+    reportId = "";
+    const pages = Array.from(formModal.querySelectorAll('.page'));
+    pages.forEach(page => {
+        page.classList.add('d-none');
+        if(page.id === "pageOne"){ {
+            page.classList.remove('d-none');
+        }
+    }});
+}
+
+// Eventlistener for when the modal is hidden
+formModal.addEventListener('hidden.bs.modal', clearModal); 
 
 
 /**
@@ -195,6 +213,7 @@ if (noButton) {
         bootstrapModal.hide();
     });
 }
+
 
 // MAP
 // let map, infoWindow;
