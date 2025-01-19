@@ -2,7 +2,7 @@
 // Modal elements
 const formModal = document.getElementById('reportModal'); //Entire Modal for targeting
 const bootstrapModal = new bootstrap.Modal(formModal); // Bootstrap Modal
-const modalButton = formModal.querySelector('#modalButton'); // Continue /submit button
+const modalButton = formModal.querySelector('#modalButton'); // Continue / submit button
 const reportForm = formModal.querySelector('#reportForm'); // Report Form element
 const reporterForm = formModal.querySelector('#reporterForm'); // Reporter Form element
 const noButton = formModal.querySelector('#noBtn'); // No button
@@ -13,8 +13,8 @@ const descriptionInput = document.getElementById('incidentDescription'); // Desc
 let incidentDescription= "placeholder description";
 let reportId = "placeholder id";
 
-// Database URLs
-const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api"; // URL to the database
+// Database URL
+const databaseURL = "https://haven-v1-fafcc90518dc.herokuapp.com/api";
 
 /**
  * When clicking Continue/Submit button, the form inputs are saved
