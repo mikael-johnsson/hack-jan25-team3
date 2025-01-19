@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <title>HAVEN</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- Bootswatch CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- What3Words -->
+    <script type="module" defer
+        src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.esm.js"></script>
+    <script nomodule defer
+        src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.js"></script>
+    <script src="https://kit.fontawesome.com/685977a0ed.js" crossorigin="anonymous"></script> <!--Fontawesome link-->
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1 class="logo">Haven</h1>
+            <input type="checkbox" id="nav-mobile-toggle" name="nav-mobile-toggle">
+            <label for="nav-mobile-toggle" class="nav-mobile-toggle">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </label>
+        <!-- Navbar here -->
+        <nav>
+            <ul id="menu">
+                <li>
+                    <a href="index.html" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-report-button">Report</a>
+                </li>
+                <li>
+                    <a href="#">Haven</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+                <li>
+                    <a href="contact.html" class="active">Contact</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-safety-button">To Safety</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-header">
+            <h1 class="page-header h1-page-header">Contact us</h1>
+            <p class="page-context">
+                At H.A.V.E.N, our mission is to combat human trafficking through vigilance,
+                empowerment, and action. We provide a confidential platform for reporting
+                suspected trafficking activities and offer critical resources to help individuals and
+                communities identify warning signs. Together, we are building a future free from exploitation.
+                <br><br>
+                Please get in touch if we can help you in any way.
+            </p>
+        </div>
+        <div id="contact">
+            <form method="GET" action="#" id="contact-form"> <!--Need something for this form to be send to-->
+                <h2>Get in Touch</h2>
+
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" class="text-input" name="first-name" required>
+                <br>
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" class="text-input" name="last-name" required>
+                <br>
+                <label for="email-address">Email address</label>
+                <input type="text" id="email-address" class="text-input" name="email-address" required>
+                <br>
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" class="text-input" name="phone-number">
+                <br>
+                <br>
+                <p>What is your request about?</p>
+                <br>
+                <div class="radio-buttons">
+                    <div>
+                        <input type="radio" id="report-incident" value="report-incident" class="contact-type"
+                            name="contact-type" required>
+                        <label for="report-incident">Report an incident</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="information" value="information" class="contact-type"
+                            name="contact-type" required>
+                        <label for="Information">General information</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="collaborate" value="collaborate" class="contact-type"
+                            name="contact-type" required>
+                        <label for="collaborate">Collaborate with HAVEN</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="general" value="general-contact" class="service-type"
+                            name="service-type" required>
+                        <label for="general">General contact</label>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label for="free-text">Please add your request below</label>
+                    <br>
+                    <textarea name="free-text" id="free-text" rows="4" cols="30"
+                        placeholder="Let us know how we can assist you." required></textarea>
+                </div>
+                <button type="submit" class="get-in-touch-button">Send request</button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <ul>
+                <li>Quick Links</li>
+                <li> The Team</li>
+                <li>Organisations</li>
+                <li>Contact Us</li>
+            </ul>
+        </footer>
+    </main>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
