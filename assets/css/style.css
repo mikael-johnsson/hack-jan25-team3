@@ -303,6 +303,7 @@ a:hover {
 #contact-form {
         min-width: 200px;
         max-width: 320px;
+     
     }
 }
 /* Footer */
@@ -315,7 +316,7 @@ a:hover {
 
 footer {
     position: relative;
-    margin-top: auto;
+    margin-top: 20px;
     padding: 20px 0;
     width: 100%;
     text-align: center;
