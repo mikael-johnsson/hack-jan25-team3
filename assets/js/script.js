@@ -9,6 +9,7 @@ const noButton = formModal.querySelector('#noBtn'); // No button
 const yesButton = formModal.querySelector('#yesBtn'); // Yes button
 const descriptionInput = document.getElementById('incidentDescription'); // Description input element
 
+
 // Form Variables to save data temporarily
 let incidentDescription= "placeholder description";
 let reportId = "placeholder id";
@@ -86,6 +87,8 @@ function changePage(openPage, pages){
         case "pageThree":
             const confirmDescription = document.getElementById('confirmDescription');
             confirmDescription.textContent = incidentDescription;
+            const confirmLocation = document.getElementById('confirmLocation');
+            confirmLocation.textContent = "Latitude: " + incidentLocation.lat + ", Longitude: " + incidentLocation.lng;
             modalButton.textContent = "Submit";
             break;
         case "pageFour":
